@@ -1,11 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GuitarBeat</title>
+
+    <script src="./js/sessao.js"></script>
+
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="icon" href="pictures/logoNovoSemFundo.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <!-- BIBLIOTECA CARROSSEL -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </head>
+
+
 <body>
-  
-</body>
+
+<!-- HEADER INICIA -->
+    <header class="header">
+      <div class="container">
+       
+        <img src="pictures/logoNovoSemFundo.png" alt="">
+        <ul class="navbar">
+          <li class="agora">
+            <a href="index.html">Home</a>
+          </li>
+          <li>|</li>
+          <li>
+            <a href="curiosidades.html">Curiosidades</a>
+          </li>
+          <li>|</li>
+          <li>
+            <a href="login.html">Login</a>
+          </li>
+          <li>|</li>
+          <li>
+            <a href="cadastro.html">Cadastro</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+<!-- HEADER FINALIZA -->
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<!-- CONTEUDO PRINCIPAL -->
+    <div class="espaco"></div>
+
+    <!-- CARROSSEL -->
+
+        <!-- Slider main container -->
+        <section class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <div class="slide swiper-show1">
+                    </div>
+                    <div class="slide-container">
+                            <h1>Lorem ipsum dolor sit </h1>
+                            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo aut possimus rerum quasi odio earum illum, exercitationem excepturi architecto porro in optio? Corporis enim, similique ipsam neque fuga temporibus sunt!</h3>
+                        </div>
+                </div>
+                <div class="swiper-slide">
+                    
+                        <div class="slide swiper-show2">
+                        </div>
+                        <div class="slide-container">
+                              <h1>Lorem ipsum dolor sit </h1>
+                              <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo aut possimus rerum quasi odio earum illum, exercitationem excepturi architecto porro in optio? Corporis enim, similique ipsam neque fuga temporibus sunt!</h3>
+                          </div>
+                    
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide swiper-show3">
+                        </div>
+                        <div class="slide-container">
+                            <h1>Lorem ipsum dolor sit </h1>
+                            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo aut possimus rerum quasi odio earum illum, exercitationem excepturi architecto porro in optio? Corporis enim, similique ipsam neque fuga temporibus sunt!</h3>
+                        </div>
+                </div>
+                ...
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </section>
+    <!-- CARROSSEL -->
+
+    <!-- Conteudo principal INDEX -->
+    <div class="titulo-index">
+      <h1>Você no <a>topo</a> da experiência <a>musical</a></h1>     
+    </div>
+  <section class="conteudo-index">
+    <div class="imagem-jogo"></div>
+    <div class="conteudo-jogo">
+      <h1>Você Tem o Que é Preciso Para Dominar o Ritmo? </h4>
+      <h3>Imagine estar no palco, a multidão vibrando, e a música correndo em suas ve’ias. Cada nota que você acerta é uma explosão de satisfação, cada combo é uma prova da sua habilidade. Isso é o que te espera no Melody Mania – o jogo que vai testar seus reflexos e seu senso musical!</p>
+    </div>
+  </section>
+
+  <section class="conteudo-index">
+    <div class="conteudo-jogo">
+      <h1>Você já parou para pensar em como a música moldou culturas, uniu povos e atravessou séculos?</h4>
+      <h3>Desde os tambores tribais que marcaram rituais antigos até os riffs eletrizantes das guitarras modernas, a música sempre foi mais do que som — é identidade, emoção e linguagem universal.
+      Ao longo da história, cada época deixou sua marca: a elegância da música clássica europeia, a intensidade do jazz nas ruas de Nova Orleans, o protesto do rock nos anos 60, a batida contagiante do pop global e a explosão do hip hop como voz das periferias.....</p>
+    </div>
+    <div class="imagem-jogo"></div>
+    
+  </section>
+
+
+<!-- CONTEUDO PRINCIPAL -->
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<!-- FOOTER INICIA -->
+    <div class="footer">
+      <div class="container">
+        <h4>Feito por Dennis SPTech &copy; 2025</h4>
+        <h4>Inspirado no AquaTech</h4>
+      </div>
+    </div>
+<!-- FOOTER FINALIZA -->
+  </body>
+
 </html>
+
+<script>
+   const swiper = new Swiper('.swiper', {
+        loop: true, // Faz o carrossel rodar infinitamente
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true, // Permite clicar nos pontos da paginação
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+        autoplay: {
+            delay: 8000, // Tempo para trocar automaticamente
+            disableOnInteraction: false, // Continua funcionando após interação
+        }
+    });
+
+
+    
+</script>

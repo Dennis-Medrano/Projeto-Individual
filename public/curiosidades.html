@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GuitarBeat</title>
+
+    <script src="./js/sessao.js"></script>
+
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="icon" href="pictures/logoNovoSemFundo.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <!-- BIBLIOTECA CARROSSEL -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</head>
+
+
+<body>
+
+<!-- HEADER INICIA -->
+    <header class="header">
+      <div class="container">
+       
+        <img src="pictures/logoNovoSemFundo.png" alt="">
+        <ul class="navbar">
+          <li class="agora">
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="curiosidades.html">Curiosidades</a>
+          </li>
+          <li>|</li>
+          <li>
+            <a href="login.html">Login</a>
+          </li>
+          <li>
+            <a href="cadastro.html">Cadastro</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+<!-- HEADER FINALIZA -->
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<div class="espaco"></div>
+
+<!-- CONTEUDO PRINCIPAL -->
+
+    <div class="titulo-historia">
+        <h1>O impacto da <a>musica</a> na história</a></h1>     
+    </div>
+    
+    <section class="sessao-parte1">
+        <div class="foto-hist1">
+        </div>
+
+        <div class="coteudo-hist1">
+            <h1>Música Antiga (Pré-História – 500 d.C.)</h1>
+            <p>
+                Origens e Características:<br>
+                   - Surgimento com instrumentos rudimentares (flautas de osso,     tambores).<br>
+                   - Uso da voz e percussão em rituais e comunicação.<br><br>
+
+                Locais de Destaque:<br>
+                    <strong>Mesopotâmia e Egito</strong>: Harpas, liras e música religiosa.<br><strong>Grécia Antiga</strong>
+                    <strong>Grécia Antiga</strong>: Teoria musical (modos gregos, Pitágoras).<br><strong>Índia e China</strong>: Escalas complexas e instrumentos como a cítara e o guqin.
+            </p>
+        </div>
+    </section>
+
+<!-- CONTEUDO PRINCIPAL -->
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<!-- FOOTER INICIA -->
+    <div class="footer">
+      <div class="container">
+        <h4>Feito por Dennis SPTech &copy; 2025</h4>
+        <h4>Inspirado no AquaTech</h4>
+      </div>
+    </div>
+<!-- FOOTER FINALIZA -->
+  </body>
+
+</html>
+
+<script>
+   const swiper = new Swiper('.swiper', {
+        loop: true, // Faz o carrossel rodar infinitamente
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true, // Permite clicar nos pontos da paginação
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+        autoplay: {
+            delay: 8000, // Tempo para trocar automaticamente
+            disableOnInteraction: false, // Continua funcionando após interação
+        }
+    });
+
+
+    
+</script>
