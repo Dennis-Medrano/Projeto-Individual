@@ -230,13 +230,24 @@ img {
 
 /*conteudo-historia*/
 
+.conteudo-historia-matrix{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
 .titulo-historia{
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 6%;
-  margin-bottom: 5%;
+  margin-top: 3%;
+  margin-bottom: 3%;
 }
 
 .titulo-historia a{
@@ -250,12 +261,13 @@ img {
 
 .sessao-parte1{
   width: 100%;
-  height: 250px;
+  height: 450px;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  margin-bottom: 2.5%;
 }
 
 .foto-hist1{
@@ -263,29 +275,130 @@ img {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;  
-  width: 50%;
-  height: 250px;
+  width: 40%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .coteudo-hist1{
-  width: 50%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column ;
 }
 
 .coteudo-hist1 p{
-  font-size: 25px;
+  font-size: 20px;
+  margin: 0;
 }
 
 .coteudo-hist1 h1{
   font-size: 25px;
 }
 
+.coteudo-hist1 h2{
+  font-size: 25px;
+  display: flex;
+  width: 100%;
+  
+}
 
+.sessao-parte2{
+  width: 100%;
+  height: 400px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 2.5%;
+}
 
+.foto-hist2{
+  background-image: url(../pictures/fotoTrovadoresFrancaMusica.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;  
+  width: 40%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.coteudo-hist2{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column ;
+}
 
+.coteudo-hist2 h2{
+  font-size: 25px;
+  display: flex;
+  width: 100%;
+  
+}
+.coteudo-hist2 p{
+  font-size: 20px;
+  margin: 0;
+}
 
+.coteudo-hist2 h1{
+  font-size: 25px;
+}
 
+/* Conteudo 3 */
+.sessao-parte3{
+  width: 100%;
+  height: 400px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 2.5%;
+}
 
+.foto-hist3{
+  background-image: url(../pictures/fotoTrovadoresFrancaMusica.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;  
+  width: 40%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coteudo-hist1 h3{
+  font-size: 25px;
+  display: flex;
+  width: 100%;
+  
+}
+
+.coteudo-hist3{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column ;
+}
+
+.coteudo-hist3 p{
+  font-size: 20px;
+  margin: 0;
+}
+
+.coteudo-hist3 h1{
+  font-size: 25px;
+}
 
 
 /* FOOTER */
