@@ -5,8 +5,9 @@ body {
   padding: 0;
   font-family: "Permanent Marker", cursive;
   background-color: black;
-
 }
+
+
 
 :root {
   --tamanho-header: 150px;
@@ -53,6 +54,22 @@ img {
   text-decoration: none;
   color: #fff;
   font-size: 22px;
+}
+
+.headerBotao{
+  width: 100%;
+  height: 150px;
+    height: 100px;
+}
+
+.botaoVoltar{
+  background-color: black;
+  z-index: 1000;
+}
+
+.headerBotao .botaoVoltar img{
+  width: 200px;
+  height: 200px;
 }
 
 .header a:hover {
@@ -258,6 +275,7 @@ img {
   font-size: 50px;
 }
 
+/* Conteudo parte 1 */
 
 .sessao-parte1{
   width: 100%;
@@ -280,6 +298,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 5%;
 }
 
 .coteudo-hist1{
@@ -293,6 +312,7 @@ img {
 .coteudo-hist1 p{
   font-size: 20px;
   margin: 0;
+  width: 100%;
 }
 
 .coteudo-hist1 h1{
@@ -306,9 +326,11 @@ img {
   
 }
 
+/* Conteudo parte 2 */
+
 .sessao-parte2{
   width: 100%;
-  height: 400px;
+  height: 450px;
   color: white;
   display: flex;
   justify-content: center;
@@ -318,6 +340,7 @@ img {
 }
 
 .foto-hist2{
+  
   background-image: url(../pictures/fotoTrovadoresFrancaMusica.webp);
   background-size: contain;
   background-repeat: no-repeat;
@@ -327,6 +350,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 5%;
 }
 
 .coteudo-hist2{
@@ -337,25 +361,28 @@ img {
   flex-direction: column ;
 }
 
-.coteudo-hist2 h2{
-  font-size: 25px;
-  display: flex;
-  width: 100%;
-  
-}
 .coteudo-hist2 p{
   font-size: 20px;
   margin: 0;
+  width: 100%;
 }
 
 .coteudo-hist2 h1{
   font-size: 25px;
 }
 
+.coteudo-hist2 h2{
+  font-size: 25px;
+  display: flex;
+  width: 100%;
+  
+}
+
 /* Conteudo 3 */
+
 .sessao-parte3{
   width: 100%;
-  height: 400px;
+  height: 450px;
   color: white;
   display: flex;
   justify-content: center;
@@ -365,7 +392,8 @@ img {
 }
 
 .foto-hist3{
-  background-image: url(../pictures/fotoTrovadoresFrancaMusica.webp);
+  
+  background-image: url(../pictures/fotoMusicaRenascenca.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;  
@@ -374,12 +402,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.coteudo-hist1 h3{
-  font-size: 25px;
-  display: flex;
-  width: 100%;
+  border-radius: 5%;
   
 }
 
@@ -394,10 +417,229 @@ img {
 .coteudo-hist3 p{
   font-size: 20px;
   margin: 0;
+  width: 100%;
 }
 
 .coteudo-hist3 h1{
   font-size: 25px;
+}
+
+.coteudo-hist3 h2{
+  font-size: 25px;
+  display: flex;
+  width: 100%;
+  
+}
+
+/* Conteudo 4 */
+
+.sessao-parte4{
+  width: 100%;
+  height: 450px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 2.5%;
+}
+
+.foto-hist4{
+  
+  background-image: url(../pictures/fotoMusicaBarroca.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;  
+  width: 40%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5%;
+  
+}
+
+.coteudo-hist4{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column ;
+}
+
+.coteudo-hist4 p{
+  font-size: 20px;
+  margin: 0;
+  width: 100%;
+}
+
+.coteudo-hist4 h1{
+  font-size: 25px;
+}
+
+.coteudo-hist4 h2{
+  font-size: 25px;
+  display: flex;
+  width: 100%;
+  
+}
+
+/* Conteudo 5 */
+
+.sessao-parte5{
+  width: 100%;
+  height: 450px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 2.5%;
+}
+
+.foto-hist5{
+  border-radius: 5%;
+  background-image: url(../pictures/fotoMusicaClassica.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;  
+  width: 40%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.coteudo-hist5{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column ;
+}
+
+.coteudo-hist5 p{
+  font-size: 20px;
+  margin: 0;
+  width: 100%;
+}
+
+.coteudo-hist5 h1{
+  font-size: 25px;
+}
+
+.coteudo-hist5 h2{
+  font-size: 25px;
+  display: flex;
+  width: 100%;
+  
+}
+
+
+/* Conteudo 6 */
+
+.sessao-parte6{
+  width: 100%;
+  height: 450px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 2.5%;
+}
+
+.foto-hist6{
+  border-radius: 5%;
+  background-image: url(../pictures/fotoMusiscaRomantica.jpeg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;  
+  width: 40%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.coteudo-hist6{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column ;
+}
+
+.coteudo-hist6 p{
+  font-size: 20px;
+  margin: 0;
+  width: 100%;
+}
+
+.coteudo-hist6 h1{
+  font-size: 25px;
+}
+
+.coteudo-hist6 h2{
+  font-size: 25px;
+  display: flex;
+  width: 100%;
+  
+}
+
+
+/* Conteudo 7 */
+
+.sessao-parte7{
+  width: 100%;
+  height: 450px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 2.5%;
+}
+
+.foto-hist7{
+  border-radius: 5%;
+  background-image: url(../pictures/fotoMusicaRock.jpeg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;  
+  width: 40%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.coteudo-hist7{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column ;
+}
+
+.coteudo-hist7 p{
+  font-size: 20px;
+  margin: 0;
+  width: 100%;
+}
+
+.coteudo-hist7 h1{
+  font-size: 25px;
+}
+
+.coteudo-hist7 h2{
+  font-size: 25px;
+  display: flex;
+  width: 100%;
+  
 }
 
 
@@ -427,7 +669,7 @@ img {
 
 .login {
   height: var(--tamanho-login);
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-color: black;
   background-size: cover;
 }
 
