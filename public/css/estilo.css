@@ -13,7 +13,7 @@ body {
   --tamanho-header: 150px;
   --tamanho-banner: calc(200vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
-  --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-login: calc(80vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-footer: 65px;
 }
 
@@ -57,24 +57,35 @@ img {
 }
 
 .headerBotao{
-  width: 100%;
+  width: 80%;
   height: 150px;
-    height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 5%;
 }
 
-.botaoVoltar{
-  background-color: black;
-  z-index: 1000;
-}
 
 .headerBotao .botaoVoltar img{
-  width: 200px;
-  height: 200px;
+  width: 75px;
+  height: 75px;
+  background-image: url(../pictures/botao.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: none;
+}
+.headerBotao .botaoVoltar:hover img{
+  background-color: #e61d3f;
+  border-radius: 90%;
+  background-image: url(../pictures/botao.png);
+  background-size: cover;
+  box-shadow: 0 0 8px 5px #e61d3f;
 }
 
 .header a:hover {
   text-decoration: none;
   color: #e61d3f;
+  
 }
 
 .header li {
