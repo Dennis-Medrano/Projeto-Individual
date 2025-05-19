@@ -332,6 +332,7 @@ img {
 
 .coteudo-hist1 h2{
   font-size: 25px;
+  align-self: center;
   display: flex;
   width: 100%;
   
@@ -697,7 +698,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: palevioletred;
+  color: #e61d3f;
   flex-direction: column;
   height: fit-content;
   padding: 20px 0;

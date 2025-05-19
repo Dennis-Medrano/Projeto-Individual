@@ -12,7 +12,7 @@
 
   <script src="./js/sessao.js"></script>
 
-  <link rel="stylesheet" href="./css/estilo.css" />
+  <link rel="stylesheet" href="./css/cadastro.css" />
   <link rel="icon" href="pictures/logoNovoSemFundo.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
@@ -30,8 +30,11 @@
     </div>
 
   <!--header fim-->
-<div class="espaco"></div>
-
+    <video autoplay muted loop playsinline class="video-bg">
+        <source src="..//public/pictures/SYSTEM OF A DOWN AUTODROMO DE INTERLAGOS 14-05-2025 Sao Paulo Brazil Toxicity compilation.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos HTML5.
+    </video>
+    
 
   <div class="login">
     <div class="alerta_erro">
@@ -41,23 +44,38 @@
     </div>
     <div class="container">
       <div class="card card-cadastro">
-        <h2>Bem-vindo!</h2>
         <div class="formulario">
-          <!--
-                         Para inserir mais um campo, copie uma das inputs abaixo.
-                         Assim que inserir vá para o script abaixo.
-                     -->
-          <div class="campo">
-            <span>Código de ativação:</span>
-            <input id="codigo_input" type="text" placeholder="Insira aqui seu código" />
-          </div>
+          
+            <div class="tit-login">
+                    <h2>Cadastro</h2>
+                    </div>
+            
           <div class="campo">
             <span>Nome:</span>
             <input id="nome_input" type="text" placeholder="Seu nome" />
           </div>
           <div class="campo">
-            <span>CPF:</span>
-            <input id="cpf_input" type="text" placeholder="Seu cpf" />
+            <span>Genero Preferido:</span>
+            <select id="select_musica">
+              <option value="#">Escolha o seu genero</option>
+              <option value="Rock">Rock</option>
+              <option value="Pop">Pop</option>
+              <option value="Hip Hop">Hip Hop</option>
+              <option value="Rap">Rap</option>
+              <option value="Eletrônica">Eletrônica</option>
+              <option value="Música Clássica">Música Clássica</option>
+              <option value="Jazz">Jazz</option>
+              <option value="Reggae">Reggae</option>
+              <option value="Samba">Samba</option>
+              <option value="Funk">Funk</option>
+              <option value="Sertanejo">Sertanejo</option>
+              <option value="Trap">Trap</option>
+              <option value="K-pop">K-pop</option>
+              <option value="Gospel">Gospel</option>
+              <option value="Country">Country</option>
+            </select>
+
+    
           </div>
           <div class="campo">
             <span>E-mail:</span>
@@ -82,14 +100,14 @@
     </div>
   </div>
 
-  <!--footer inicio-->
-  <div class="footer">
-    <div class="container">
-      <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-      <span class="version">v1.0.0</span>
+  <!-- FOOTER INICIA -->
+    <div class="footer">
+      <div class="container">
+        <h4>Feito por Dennis SPTech &copy; 2025</h4>
+        <h4>Inspirado no AquaTech</h4>
+      </div>
     </div>
-  </div>
-  <!--footer fim-->
+<!-- FOOTER FINALIZA -->
 </body>
 
 </html>
