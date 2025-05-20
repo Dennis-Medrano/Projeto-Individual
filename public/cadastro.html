@@ -20,7 +20,7 @@
 
 
 
-<body onload="listar()">
+<body >
 
   <!--header inicio-->
     <div class="headerBotao">
@@ -31,7 +31,7 @@
 
   <!--header fim-->
     <video autoplay muted loop playsinline class="video-bg">
-        <source src="..//public/pictures/SYSTEM OF A DOWN AUTODROMO DE INTERLAGOS 14-05-2025 Sao Paulo Brazil Toxicity compilation.mp4" type="video/mp4">
+        <source src="../pictures/system.mp4" type="video/mp4">
         Seu navegador não suporta vídeos HTML5.
     </video>
     
@@ -133,20 +133,17 @@
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
-    var cpfVar = cpf_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var codigoVar = codigo_input.value;
-    var idEmpresaVincular
+    var generoVar = select_musica.value;
 
     // Verificando se há algum campo em branco
     if (nomeVar == "" ||
-      cpfVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == "" ||
-      codigoVar == ""){
+      generoVar == ""){
 
         cardErro.style.display = "block";
         mensagem_erro.innerHTML =
@@ -158,18 +155,7 @@
         setInterval(sumirMensagem, 5000);
     }
 
-    // Verificando se o código de ativação é de alguma empresa cadastrada
-    for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
-      if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
-        idEmpresaVincular = listaEmpresasCadastradas[i].id
-        console.log("Código de ativação válido.");
-        break;
-      } else {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
-        finalizarAguardar();
-      }
-    }
+    
     // Verificando se o nome é maior que 1 char
     if (nomeVar.length == 1) {
       cardErro.style.display = "block";
@@ -179,14 +165,7 @@
       return false;
     }
 
-    // Verificando se o cpf tem 11 char
-    if (cpfVar.length != 11) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "(Mensagem de erro para o cpf incorreto)";
-
-      finalizarAguardar();
-      return false;
-    }
+  
 
 
     // Verificando se o email contem "@" 
@@ -255,10 +234,9 @@
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
-        cpfServer: cpfVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        idEmpresaVincularServer: idEmpresaVincular
+        generoServer: generoVar
       }),
     })
       .then(function (resposta) {
@@ -288,25 +266,7 @@
     return false;
   }
 
-  // Listando empresas cadastradas 
-  function listar() {
-    fetch("/empresas/listar", {
-      method: "GET",
-    })
-      .then(function (resposta) {
-        resposta.json().then((empresas) => {
-          empresas.forEach((empresa) => {
-            listaEmpresasCadastradas.push(empresa);
-
-            console.log("listaEmpresasCadastradas")
-            console.log(listaEmpresasCadastradas[0].codigo_ativacao)
-          });
-        });
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
-  }
+ 
 
   function sumirMensagem() {
     cardErro.style.display = "none";
