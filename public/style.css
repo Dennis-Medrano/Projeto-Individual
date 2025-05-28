@@ -1,0 +1,211 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.tabuleiro{
+    position: relative;
+    width: 600px;
+    height: 800px;
+    background-color: black;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.fora{
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 85%;
+}
+
+.coluna1{
+    width: 20%;
+    height: 100%;
+    border-left: 2px solid red;
+    border-bottom: 2px solid red;
+}
+.coluna2{
+    width: 20%;
+    height: 100%;
+    border-left: 2px solid red;
+    border-bottom: 2px solid red;
+}
+.coluna3{
+    width: 20%;
+    height: 100%;
+    border-left: 2px solid red;
+    border-bottom: 2px solid red;
+}
+.coluna4{
+    width: 20%;
+    height: 100%;
+    border-left: 2px solid red;
+    border-bottom: 2px solid red;
+}
+.coluna5{
+    width: 20%;
+    height: 100%;
+    border-left: 2px solid red;
+    border-bottom: 2px solid red;
+}   
+
+.dentro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15%;
+}
+
+.bolaNormal{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.quadrado1{
+    width: 20%;
+    height: 100%;
+    border-left: 2px solid red;
+    border-bottom: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        
+}
+.quadrado2{
+    width: 20%;
+    height: 100%;
+    border-left: 2px solid red;
+    border-bottom: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quadrado3{
+    width: 20%;
+    height: 100%;
+    border-left: 2px solid red;
+    border-bottom: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quadrado4{
+    width: 20%;
+    height: 100%;
+    border-left: 2px solid red;
+    border-bottom: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quadrado5{
+    width: 20%;
+    height: 100%;
+    border-left: 2px solid red;
+    border-bottom: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bolaMove1{
+    position: absolute;
+
+    top: 0;      
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color:red;
+}
+.bolaMove2{
+    position: absolute;
+    
+    top: 0;      
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color:red;
+}
+.bolaMove3{
+    position: absolute;
+    
+    top: 0;      
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color:red;
+}
+.bolaMove4{
+    position: absolute;
+    
+    top: 0;      
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color:red;
+}
+.bolaMove5{
+    position: absolute;
+    
+    top: 0;      
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color:red;
+}
+
+.bola1Click{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: green;
+}
