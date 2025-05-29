@@ -1,50 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    
-</head>
+
+    <title>GuitarBeat - Jogo</title> <script src="./js/sessao.js"></script> <link rel="stylesheet" href="./css/estilo.css"> <link rel="stylesheet" href="style.css"> <link rel="icon" href="pictures/logoNovoSemFundo.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    </head>
+
 <body>
-    <div>
-        <h1>Pontos:</p>
-    </div>
-    <div class="tabuleiro">
-        <div class="fora">
-            <div class="coluna1"></div>
-            <div class="coluna2"></div>
-            <div class="coluna3"></div>
-            <div class="coluna4"></div>
-            <div class="coluna5"></div>
-        </div>
-        <div class="dentro">
-            <div class="quadrado1">
-                <div class="bolaNormal" id="bola_1"></div>
-            </div>
-            <div class="quadrado2">
-                <div class="bolaNormal" id="bola_2"></div>
-            </div>
-            <div class="quadrado3">
-                <div class="bolaNormal" id="bola_3"></div>
-            </div>
-            <div class="quadrado4">
-                <div class="bolaNormal" id="bola_4"></div>
-            </div>
-            <div class="quadrado5">
-                <div class="bolaNormal" id="bola_5"></div>
-            </div>
-        </div>
-    <div class="bolaMove1" id="bolaMov1"></div>
-    <div class="bolaMove2" id="bolaMov2"></div>
-    <div class="bolaMove3" id="bolaMov3"></div>
-    <div class="bolaMove4" id="bolaMov4"></div>
-    <div class="bolaMove5" id="bolaMov5"></div>
-    </div>
 
     
-</body>
-</html>
+    <section class="jogo-container"> 
 
-<script src="contato.js"></script>
+        <div>
+            <h1>Pontos: <span id="id_pontos">0</span>pts</h1> 
+            <h1>Multiplicador: <span id="id_mult">0</span>pts</h1> 
+            <h1>Combos: <span id="id_combo">0</span>pts</h1> 
+        </div>
+
+        <div class="tabuleiro">
+            <div class="fora">
+                <div class="coluna1"></div>
+                <div class="coluna2"></div>
+                <div class="coluna3"></div>
+                <div class="coluna4"></div>
+                <div class="coluna5"></div>
+            </div>
+            <div class="dentro">
+                <div class="quadrado1">
+                    <div class="bolaNormal" id="bola_1"></div>
+                </div>
+                <div class="quadrado2">
+                    <div class="bolaNormal" id="bola_2"></div>
+                </div>
+                <div class="quadrado3">
+                    <div class="bolaNormal" id="bola_3"></div>
+                </div>
+                <div class="quadrado4">
+                    <div class="bolaNormal" id="bola_4"></div>
+                </div>
+                <div class="quadrado5">
+                    <div class="bolaNormal" id="bola_5"></div>
+                </div>
+            </div>
+        <div class="bolaMove1" id="bolaMov1"></div>
+        <div class="bolaMove2" id="bolaMov2"></div>
+        <div class="bolaMove3" id="bolaMov3"></div>
+        <div class="bolaMove4" id="bolaMov4"></div>
+        <div class="bolaMove5" id="bolaMov5"></div>
+        <!-- <div class="bolaMove6" id="bolaMov6"></div>
+        <div class="bolaMove7" id="bolaMov7"></div>
+        <div class="bolaMove8" id="bolaMov8"></div>
+        <div class="bolaMove9" id="bolaMov9"></div>
+        <div class="bolaMove10" id="bolaMov10"></div> -->
+        </div>
+    </section>
+
+    <div class="footer">
+      <div class="container">
+        <h4>Feito por Dennis SPTech &copy; 2025</h4>
+      </div>
+    </div>
+    <script src="contato.js"></script> </body>
+</html>

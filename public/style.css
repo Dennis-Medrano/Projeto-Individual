@@ -1,7 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -46,6 +43,27 @@ table {
     border-spacing: 0;
 }
 
+.jogo-container{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.jogo-container{
+    color: white;
+}
+
+.jogo-container h1{
+    text-align: center;
+    font-size: 26px;
+    z-index: 2;
+    background-color: black;
+    width: 600px;
+}
+
 .tabuleiro{
     position: relative;
     width: 600px;
@@ -54,6 +72,7 @@ table {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
+    z-index: -2;
 }
 
 .fora{
@@ -62,37 +81,49 @@ table {
     justify-content: flex-start;
     width: 100%;
     height: 85%;
+    z-index: -2;
 }
 
 .coluna1{
     width: 20%;
     height: 100%;
+    border-top: 2px solid red;
     border-left: 2px solid red;
     border-bottom: 2px solid red;
+    z-index: -2;
 }
 .coluna2{
     width: 20%;
     height: 100%;
+    border-top: 2px solid red;
     border-left: 2px solid red;
     border-bottom: 2px solid red;
+    z-index: -2;
 }
 .coluna3{
     width: 20%;
     height: 100%;
+    border-top: 2px solid red;
     border-left: 2px solid red;
     border-bottom: 2px solid red;
+    z-index: -2;
 }
 .coluna4{
     width: 20%;
     height: 100%;
+    border-top: 2px solid red;
     border-left: 2px solid red;
     border-bottom: 2px solid red;
+    z-index: -2;
 }
 .coluna5{
     width: 20%;
     height: 100%;
+    border-top: 2px solid red;
     border-left: 2px solid red;
+    border-right: 2px solid red;
     border-bottom: 2px solid red;
+    z-index: -2;
 }   
 
 .dentro{
@@ -101,6 +132,7 @@ table {
     align-items: center;
     width: 100%;
     height: 15%;
+    z-index: -2;
 }
 
 .bolaNormal{
@@ -108,6 +140,7 @@ table {
     height: 75px;
     border-radius: 50%;
     background-color: white;
+    z-index: -2;
 }
 
 .quadrado1{
@@ -118,6 +151,7 @@ table {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: -2;
         
 }
 .quadrado2{
@@ -128,6 +162,7 @@ table {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: -2;
 }
 .quadrado3{
     width: 20%;
@@ -137,6 +172,7 @@ table {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: -2;
 }
 .quadrado4{
     width: 20%;
@@ -146,20 +182,23 @@ table {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: -2;
 }
 .quadrado5{
     width: 20%;
     height: 100%;
     border-left: 2px solid red;
+    border-right: 2px solid red;
     border-bottom: 2px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: -2;
 }
 
 .bolaMove1{
     position: absolute;
-
+    z-index: -2;
     top: 0;      
     width: 75px;
     height: 75px;
@@ -168,7 +207,7 @@ table {
 }
 .bolaMove2{
     position: absolute;
-    
+    z-index: -2;
     top: 0;      
     width: 75px;
     height: 75px;
@@ -177,7 +216,7 @@ table {
 }
 .bolaMove3{
     position: absolute;
-    
+    z-index: -2;
     top: 0;      
     width: 75px;
     height: 75px;
@@ -186,7 +225,7 @@ table {
 }
 .bolaMove4{
     position: absolute;
-    
+    z-index: -2;
     top: 0;      
     width: 75px;
     height: 75px;
@@ -195,7 +234,56 @@ table {
 }
 .bolaMove5{
     position: absolute;
-    
+    z-index: -2;
+    top: 0;      
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color:red;
+}
+
+.bolaMove6{
+    position: absolute;
+    z-index: -2;
+    top: 0;      
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color:red;
+}
+
+.bolaMove7{
+    position: absolute;
+    z-index: -2;
+    top: 0;      
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color:red;
+}
+
+.bolaMove8{
+    position: absolute;
+    z-index: -2;
+    top: 0;      
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color:red;
+}
+
+.bolaMove9{
+    position: absolute;
+    z-index: -2;
+    top: 0;      
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color:red;
+}
+.bolaMove10{
+    position: absolute;
+    z-index: -2;
     top: 0;      
     width: 75px;
     height: 75px;
@@ -204,6 +292,7 @@ table {
 }
 
 .bola1Click{
+    z-index: -2;
     width: 75px;
     height: 75px;
     border-radius: 50%;
