@@ -20,21 +20,21 @@
 
 
 
-<body >
+<body>
 
   <!--header inicio-->
-    <div class="headerBotao">
-        <a href="index.html" class="botaoVoltar">
-            <img src="./pictures/botao.png" alt="">
-        </a>
-    </div>
+  <div class="headerBotao">
+    <a href="index.html" class="botaoVoltar">
+      <img src="./pictures/botao.png" alt="">
+    </a>
+  </div>
 
   <!--header fim-->
-    <video autoplay muted loop playsinline class="video-bg">
-        <source src="../pictures/system.mp4" type="video/mp4">
-        Seu navegador não suporta vídeos HTML5.
-    </video>
-    
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="../pictures/system.mp4" type="video/mp4">
+    Seu navegador não suporta vídeos HTML5.
+  </video>
+
 
   <div class="login">
     <div class="alerta_erro">
@@ -45,11 +45,11 @@
     <div class="container">
       <div class="card card-cadastro">
         <div class="formulario">
-          
-            <div class="tit-login">
-                    <h2>Cadastro</h2>
-                    </div>
-            
+
+          <div class="tit-login">
+            <h2>Cadastro</h2>
+          </div>
+
           <div class="campo">
             <span>Nome:</span>
             <input id="nome_input" type="text" placeholder="Seu nome" />
@@ -75,7 +75,7 @@
               <option value="Country">Country</option>
             </select>
 
-    
+
           </div>
           <div class="campo">
             <span>E-mail:</span>
@@ -101,13 +101,13 @@
   </div>
 
   <!-- FOOTER INICIA -->
-    <div class="footer">
-      <div class="container">
-        <h4>Feito por Dennis SPTech &copy; 2025</h4>
-        <h4>Inspirado no AquaTech</h4>
-      </div>
+  <div class="footer">
+    <div class="container">
+      <h4>Feito por Dennis SPTech &copy; 2025</h4>
+      <h4>Inspirado no AquaTech</h4>
     </div>
-<!-- FOOTER FINALIZA -->
+  </div>
+  <!-- FOOTER FINALIZA -->
 </body>
 
 </html>
@@ -143,19 +143,20 @@
       emailVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == "" ||
-      generoVar == ""){
+      generoVar == "") {
 
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML =
-          "(Mensagem de erro para todos os campos em branco)";
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Mensagem de erro para todos os campos em branco)";
 
-        finalizarAguardar();
-        return false;
+      finalizarAguardar();
+      setInterval(sumirMensagem, 5000);
+      return false;
     } else {
-        setInterval(sumirMensagem, 5000);
+      setInterval(sumirMensagem, 5000);
     }
 
-    
+
     // Verificando se o nome é maior que 1 char
     if (nomeVar.length == 1) {
       cardErro.style.display = "block";
@@ -165,7 +166,7 @@
       return false;
     }
 
-  
+
 
 
     // Verificando se o email contem "@" 
@@ -180,13 +181,13 @@
       }
     }
 
-    if (contArroba > 1 ) {
+    if (contArroba > 1) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML = "(Mensagem de erro para o uso excessivo do @)";
 
       finalizarAguardar();
       return false;
-    } else if (contArroba == 0){
+    } else if (contArroba == 0) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML = "(Mensagem de erro para a falta de uso do @)";
 
@@ -197,7 +198,7 @@
     // Verificando se o email contem "."
 
 
-    if (contPonto == 0){
+    if (contPonto == 0) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML = "(Mensagem de erro para a falta de uso do '.')";
 
@@ -266,7 +267,7 @@
     return false;
   }
 
- 
+
 
   function sumirMensagem() {
     cardErro.style.display = "none";

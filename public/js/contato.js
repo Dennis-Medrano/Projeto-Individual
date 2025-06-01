@@ -6,6 +6,8 @@ var time = 0;
 var pontuação = 0;
 var multiplicador = 1;
 var velocidade = 9; 
+var velocidadePausa =0
+var pause = false;
 var combo = 0 
      
 //Variavel para inicio do jogo
@@ -120,7 +122,7 @@ function inicia() {
 function movimentar() {
     // Atualiza bolaMov1
     var topAtual1 = parseFloat(bolaMov1.style.top); // Converte a string para número
-    if (topAtual1 >= alturaTabuleiro) {
+    if (topAtual1 >= (alturaTabuleiro)) {
         posicaoAleatoria = Math.random()*75 - 100;
         bolaMov1.style.top =  `${posicaoAleatoria}px`; // Volta para o topo
         multiplicador = 1;
@@ -133,7 +135,7 @@ function movimentar() {
 
     // Atualiza bolaMov2
     var topAtual2 = parseFloat(bolaMov2.style.top);
-    if (topAtual2 >= alturaTabuleiro) {
+    if (topAtual2 >= (alturaTabuleiro)) {
         posicaoAleatoria = Math.random()*75 - 500;
         bolaMov2.style.top = `${posicaoAleatoria}px`;
         multiplicador = 1;
@@ -145,7 +147,7 @@ function movimentar() {
 
     // Atualiza bolaMov3
     var topAtual3 = parseFloat(bolaMov3.style.top);
-    if (topAtual3 >= alturaTabuleiro) {
+    if (topAtual3 >= (alturaTabuleiro)) {
         posicaoAleatoria = Math.random()*75 - 750;
         bolaMov3.style.top = `${posicaoAleatoria}px`;
         multiplicador = 1;
@@ -157,7 +159,7 @@ function movimentar() {
 
     // Atualiza bolaMov4
     var topAtual4 = parseFloat(bolaMov4.style.top);
-    if (topAtual4 >= alturaTabuleiro) {
+    if (topAtual4 >= (alturaTabuleiro)) {
         posicaoAleatoria = Math.random()*75 - 400;
         bolaMov4.style.top = `${posicaoAleatoria}px`;
         multiplicador = 1;
@@ -169,7 +171,7 @@ function movimentar() {
 
     // Atualiza bolaMov5
     var topAtual5 = parseFloat(bolaMov5.style.top);
-    if (topAtual5 >= alturaTabuleiro) {
+    if (topAtual5 >= (alturaTabuleiro)) {
         posicaoAleatoria = Math.random()*75 - 300;
         bolaMov5.style.top = `${posicaoAleatoria}px`;
         multiplicador = 1;
@@ -246,12 +248,13 @@ function movimentar() {
 
 }
 
+    
 
 
 window.addEventListener('keydown', function() {
     var tecla = event.key;
     
-    if (tecla == 'a') {
+    if (tecla == 'a' || tecla == 'A') {
         receptor1.classList.add('bola1Click');
         receptor1.classList.remove('bolaNormal');
 
@@ -283,6 +286,7 @@ window.addEventListener('keydown', function() {
             bolaMov1.style.top = `${posicaoAleatoria}px`;
             pontuação += 100*multiplicador;
             combo++
+            velocidade += 0.01
         } 
         // else if (posiçãoColuna1_1_final > posiçãoReceptor_inicial &&  posiçãoColuna1_1_inicial < posiçãoReceptor_final) {
         //     posicaoAleatoria = Math.random()*150 - 150;posicaoAleatoria = Math.random()*
@@ -299,7 +303,7 @@ window.addEventListener('keydown', function() {
         
     }
     
-    if (tecla == 's') {
+    if (tecla == 's' || tecla == 'S') {
         receptor2.classList.add('bola1Click');
         receptor2.classList.remove('bolaNormal');
 
@@ -317,6 +321,7 @@ window.addEventListener('keydown', function() {
             bolaMov2.style.top = `${posicaoAleatoria}px`;
             pontuação += 100*multiplicador;
             combo++
+            velocidade += 0.01
         } 
         // else if (posiçãoColuna2_2_final > posiçãoReceptor_inicial && posiçãoColuna2_2_inicial < posiçãoReceptor_final) {
         //     posicaoAleatoria = Math.random()*150 - 150;
@@ -331,7 +336,7 @@ window.addEventListener('keydown', function() {
         }
 
     }
-    if (tecla == 'd') {
+    if (tecla == 'd' || tecla == 'D') {
         receptor3.classList.add('bola1Click');
         receptor3.classList.remove('bolaNormal');
 
@@ -351,6 +356,7 @@ window.addEventListener('keydown', function() {
             bolaMov3.style.top = `${posicaoAleatoria}px`;
             pontuação += 100*multiplicador;
             combo++
+            velocidade += 0.01
         } 
         // else if (posiçãoColuna3_3_final > posiçãoReceptor_inicial && posiçãoColuna3_3_inicial < posiçãoReceptor_final) {
         //     posicaoAleatoria = Math.random()*150 - 150;
@@ -365,7 +371,7 @@ window.addEventListener('keydown', function() {
         }
 
     }
-    if (tecla == 'k') {
+    if (tecla == 'k' || tecla == 'K') {
         receptor4.classList.add('bola1Click');
         receptor4.classList.remove('bolaNormal');
 
@@ -385,6 +391,7 @@ window.addEventListener('keydown', function() {
             bolaMov4.style.top = `${posicaoAleatoria}px`;
             pontuação += 100*multiplicador;
             combo++
+            velocidade += 0.01
         } 
         // else if (posiçãoColuna4_4_final > posiçãoReceptor_inicial && posiçãoColuna4_4_inicial < posiçãoReceptor_final) {
         //     posicaoAleatoria = Math.random()*150 - 150;
@@ -398,7 +405,7 @@ window.addEventListener('keydown', function() {
             velocidade = 9
         }
     }
-    if (tecla == 'l') {
+    if (tecla == 'l' || tecla == 'L') {
         receptor5.classList.add('bola1Click');
         receptor5.classList.remove('bolaNormal');
 
@@ -418,6 +425,7 @@ window.addEventListener('keydown', function() {
             bolaMov5.style.top = `${posicaoAleatoria}px`;
             pontuação += 100*multiplicador;
             combo++
+            velocidade += 0.01
         } 
         // else if (posiçãoColuna5_5_final > posiçãoReceptor_inicial && posiçãoColuna5_5_inicial < posiçãoReceptor_final) {
         //     posicaoAleatoria = Math.random()*150 - 150;
@@ -438,6 +446,17 @@ window.addEventListener('keydown', function() {
         velocidade = velocidade + velocidade*0.1;
     } 
 
+    if (tecla == ' ') {
+        if (pause == false) {
+            velocidadePausa = velocidade;
+            velocidade = 0;
+            pause = true;
+        } else {
+            velocidade = velocidadePausa;
+            pause = false;
+        }
+    }
+
     id_pontos.innerHTML = pontuação;
     id_mult.innerHTML = multiplicador;
     id_combo.innerHTML = combo;
@@ -448,24 +467,25 @@ window.addEventListener('keydown', function() {
 window.addEventListener('keyup', function() {
     var tecla = event.key;
     
-    if (tecla == 'a') {
+    
+    if (tecla == 'a' || tecla == 'A') {
         receptor1.classList.remove('bola1Click');
         receptor1.classList.add('bolaNormal');
 
     }
-    if (tecla == 's') {
+    if (tecla == 's' || tecla == 'S') {
         receptor2.classList.remove('bola1Click');
         receptor2.classList.add('bolaNormal');
     }
-    if (tecla == 'd') {
+    if (tecla == 'd' || tecla == 'D') {
         receptor3.classList.remove('bola1Click');
         receptor3.classList.add('bolaNormal');
     }
-    if (tecla == 'k') {
+    if (tecla == 'k' || tecla == 'K') {
         receptor4.classList.remove('bola1Click');
         receptor4.classList.add('bolaNormal');
     }
-    if (tecla == 'l') {
+    if (tecla == 'l' || tecla == 'L') {
         receptor5.classList.remove('bola1Click');
         receptor5.classList.add('bolaNormal');
     }
