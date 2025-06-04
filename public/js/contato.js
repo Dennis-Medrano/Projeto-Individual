@@ -9,6 +9,10 @@ var velocidade = 9;
 var velocidadePausa =0
 var pause = false;
 var combo = 0 
+
+//Variaveis para musica
+var musicaTag = document.getElementById('musicaJogo');
+var musicaJogo = ''
      
 //Variavel para inicio do jogo
 var inicio = true;
@@ -38,7 +42,13 @@ var posiçãoColuna4 = 0
 var posiçãoColuna5 = 0
 
 //Iniciar o evento
-window.addEventListener("click", inicia);
+window.addEventListener("keydown", function () {
+var tecla = event.key;
+    if (tecla == 'Enter') {
+        inicia()
+    } 
+
+});
 
 //Deixando a bola invisivel
 bolaMov1.classList.remove('bolaMove1');
@@ -247,8 +257,6 @@ function movimentar() {
     id_combo.innerHTML = combo;
 
 }
-
-    
 
 
 window.addEventListener('keydown', function() {
