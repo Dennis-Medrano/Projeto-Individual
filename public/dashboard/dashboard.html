@@ -27,7 +27,7 @@
 
 <!-- <body onload=" atualizarFeed()"> -->
 
-<body>
+<body onload="plotarGraficoLinha()">
 
     <div class="janela">
         <div class="header-left">
@@ -67,7 +67,7 @@
 
             <div class="kpi-inferior">
                 <div class="grafico">
-                    <canvas id="grafico"></canvas>
+                    <canvas id="graficoLinha" class="graficoLinha"></canvas>
                 </div>
                 
                 <div class="rank">
@@ -94,6 +94,130 @@
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     
+
+    function obterDados() {
+        var id_usuario = sessionStorage.ID_USUARIO;
+
+        // Graficos de linha ------------------------------------------------------------------------------------------------------
+        fetch(`/kpis/Graficolinha/${id_usuario}`).then(function (response) {
+
+            return response.json();
+        })
+            .then(function (data) {
+                console.log(data);
+                plotarGraficoLinha(data);
+            })
+            .catch(function (err) {
+                console.log(err);
+            })
+
+
+        // kppi de ultimo dia sem vazamento ------------------------------------------------------------------------------------------------------
+        fetch(`/kpis/kpiSuperior/${id_usuario}`).then(function (response) {
+
+            return response.json();
+        })
+            .then(function (data) {
+                console.log(data);
+                plotarKpiUltimo(data);
+            })
+            .catch(function (err) {
+                console.log(err);
+            })
+
+
+        // kppi de sensores ativos ------------------------------------------------------------------------------------------------------
+        fetch(`/kpis/rank/${id_usuario}`).then(function (response) {
+
+            return response.json();
+        })
+            .then(function (data) {
+                console.log(data);
+                plotarKpiAtivos(data);
+            })
+            .catch(function (err) {
+                console.log(err);
+            })
+
+
+    }
+
+    function plotarGraficoLinha() {
+       
+        const ctx = document.getElementById('graficoLinha').getContext('2d');
+
+       
+        const labels = ['Partida 1', 'Partida 2', 'Partida 3', 'Partida 4', 'Partida 5', 'Partida 6'];
+        const mockData = {
+            labels: labels,
+            datasets: [{
+                label: 'Pontuação por Partida',
+                data: [15200, 25500, 22100, 31000, 45600, 39800], 
+                fill: true,
+                borderColor: '#e61d3f', 
+                backgroundColor: 'rgba(230, 29, 63, 0.2)', 
+                tension: 0.1, 
+                borderWidth: 3
+            }]
+        };
+
+        
+        const config = {
+            type: 'line',
+            data: mockData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false, 
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {color: 'white',
+                                font: {size:14}
+                        }
+
+                    },
+                    title: {
+                        display: true,
+                        text: 'Evolução da Pontuação nas Últimas Partidas',
+                        color: 'white',
+                        font: {
+                            size: 23,
+                            
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true, 
+                        title: {
+                            display: true,
+                            color: 'white',
+                            text: 'Pontuação',
+                            font: { size: 15 }
+                        },
+                        ticks: { // cor da escala
+                            color: 'white'
+                        }
+                    },
+                    x: {
+                         title: {
+                            display: true,
+                            color: 'white',
+                            text: 'Partidas',
+                            font: { size: 15 }
+                        },
+                        ticks: { // cor da escala
+                            color: 'white'
+                        }
+                    }
+                }
+            }
+        };
+
+        
+        new Chart(ctx, config);
+    }
+
 
     
 </script>
