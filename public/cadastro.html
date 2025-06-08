@@ -55,6 +55,10 @@
             <input id="nome_input" type="text" placeholder="Seu nome" />
           </div>
           <div class="campo">
+            <span>Sobrenome:</span>
+            <input id="sobrenome_input" type="text" placeholder="Seu nome" />
+          </div>
+          <div class="campo">
             <span>Genero Preferido:</span>
             <select id="select_musica">
               <option value="#">Escolha o seu genero</option>
@@ -133,6 +137,7 @@
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
+    var sobrenomeVar = sobrenome_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
@@ -235,6 +240,7 @@
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
+        sobrenomeServer: sobrenomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
         generoServer: generoVar

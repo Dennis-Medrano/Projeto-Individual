@@ -1,6 +1,6 @@
 
 
-var listaMusicaRock = [
+var listaMusica = [
     {
         Genero: 'Rock',
         Musica: 'Toxicity',
@@ -22,97 +22,70 @@ var listaMusicaRock = [
 function escolhaMusica() {
     var genero = select_genero.value;
     var musica = document.getElementById('select_musica')
-
-    if (genero == 'Rock') {
-        for (let i = 1; i <= listaMusicaRock.length; i++) {
-            musica.options[i].text = listaMusicaRock[i - 1].Musica;
-            
+    var contador = 0;
+    for (let i = 0; i < listaMusica.length; i++) {
+        if (genero == 'Rock') {
+            musica.options[contador+1].text = listaMusica[contador].Musica;
+            contador++
+        }
+        if (genero == 'Pop') {
+            musica.options[contador+1].text = listaMusica[contador].Musica;
+            contador++
+        }
+        if (genero == 'Hip Hop') {
+            musica.options[contador+1].text = listaMusica[contador].Musica;
+            contador++
+        }
+        if (genero == 'Rap') {
+            musica.options[contador+1].text = listaMusica[contador].Musica;
+            contador++
+        }
+        if (genero == 'Eletrônica') {
+            musica.options[contador+1].text = listaMusica[contador].Musica;
+            contador++
+        }
+        if (genero == 'Música Clássica') {
+            musica.options[contador+1].text = listaMusica[contador].Musica;
+            contador++
+        }
+        if (genero == 'Jazz') {
+            musica.options[contador+1].text = listaMusica[contador].Musica;
+            contador++
+        }
+        if (genero == 'Reggae') {
+            musica.options[contador+1].text = listaMusica[contador].Musica;
+            contador++
+        }
+        if (genero == 'Samba') {
+            musica.options[contador+1].text = listaMusica[contador].Musica;
+            contador++
+        }
+        if (genero == 'Funk') {
+            musica.options[contador+1].text = listaMusica[contador].Musica;
+            contador++
+        }
+        if (genero == 'Sertanejo') {
+            musica.options[contador+1].text = listaMusica[contador].Musica;
+            contador++
+        }
+        if (genero == 'Trap') {
+            musica.options[contador+1].text = listaMusica[contador].Musica;
+            contador++
+        }
+        if (genero == 'K-pop') {
+            musica.options[contador+1].text = listaMusica[contador].Musica;
+            contador++
+        }
+        if (genero == 'Gospel') {
+            musica.options[contador+1].text = listaMusica[contador].Musica;
+            contador++
+        }
+        if (genero == 'Country') {
+            musica.options[contador+1].text = listaMusica[contador].Musica;
+            contador++
         }
     }
-    if (genero == 'Pop') {
-        for (let i = 1; i <= listaMusicaRock.length; i++) {
-            musica.options[i].text = listaMusicaRock[i - 1].Musica;
-            
-        }
-    }
-    if (genero == 'Hip Hop') {
-        for (let i = 1; i <= listaMusicaRock.length; i++) {
-            musica.options[i].text = listaMusicaRock[i - 1].Musica;
-            
-        }
-    }
-    if (genero == 'Rap') {
-        for (let i = 1; i <= listaMusicaRock.length; i++) {
-            musica.options[i].text = listaMusicaRock[i - 1].Musica;
-            
-        }
-    }
-    if (genero == 'Eletrônica') {
-        for (let i = 1; i <= listaMusicaRock.length; i++) {
-            musica.options[i].text = listaMusicaRock[i - 1].Musica;
-            
-        }
-    }
-    if (genero == 'Música Clássica') {
-        for (let i = 1; i <= listaMusicaRock.length; i++) {
-            musica.options[i].text = listaMusicaRock[i - 1].Musica;
-            
-        }
-    }
-    if (genero == 'Jazz') {
-        for (let i = 1; i <= listaMusicaRock.length; i++) {
-            musica.options[i].text = listaMusicaRock[i - 1].Musica;
-            
-        }
-    }
-    if (genero == 'Reggae') {
-        for (let i = 1; i <= listaMusicaRock.length; i++) {
-            musica.options[i].text = listaMusicaRock[i - 1].Musica;
-            
-        }
-    }
-    if (genero == 'Samba') {
-        for (let i = 1; i <= listaMusicaRock.length; i++) {
-            musica.options[i].text = listaMusicaRock[i - 1].Musica;
-            
-        }
-    }
-    if (genero == 'Funk') {
-        for (let i = 1; i <= listaMusicaRock.length; i++) {
-            musica.options[i].text = listaMusicaRock[i - 1].Musica;
-            
-        }
-    }
-    if (genero == 'Sertanejo') {
-        for (let i = 1; i <= listaMusicaRock.length; i++) {
-            musica.options[i].text = listaMusicaRock[i - 1].Musica;
-            
-        }
-    }
-    if (genero == 'Trap') {
-        for (let i = 1; i <= listaMusicaRock.length; i++) {
-            musica.options[i].text = listaMusicaRock[i - 1].Musica;
-            
-        }
-    }
-    if (genero == 'K-pop') {
-        for (let i = 1; i <= listaMusicaRock.length; i++) {
-            musica.options[i].text = listaMusicaRock[i - 1].Musica;
-            
-        }
-    }
-    if (genero == 'Gospel') {
-        for (let i = 1; i <= listaMusicaRock.length; i++) {
-            musica.options[i].text = listaMusicaRock[i - 1].Musica;
-            
-        }
-    }
-    if (genero == 'Country') {
-        for (let i = 1; i <= listaMusicaRock.length; i++) {
-            musica.options[i].text = listaMusicaRock[i - 1].Musica;
-            
-        }
-    }
+    
 }
 
 
@@ -188,11 +161,11 @@ function inicia() {
     var telaInidico = document.getElementById('telaInicial');
     var musica = document.getElementById('select_musica')
     
-    for (let i = 0; i < listaMusicaRock.length; i++) {
-        if (musica.value == listaMusicaRock[i].Musica) {
+    for (let i = 0; i < listaMusica.length; i++) {
+        if (musica.value == listaMusica[i].Musica) {
             console.log("Elemento que tentarei esconder:", telaInidico);
 
-            musicaDoJogo.src = listaMusicaRock[i].Endereço;
+            musicaDoJogo.src = listaMusica[i].Endereço;
             musicaDoJogo.play();
             telaInidico.style.display = 'none'
             break;
