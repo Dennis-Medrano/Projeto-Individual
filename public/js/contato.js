@@ -98,6 +98,7 @@ var pontuação = 0;
 var multiplicador = 1;
 var velocidade = 9;
 var velocidadePausa = 0
+var tempoAtualPausado=0
 var pause = false;
 var combo = 0
 
@@ -156,17 +157,38 @@ bolaMov5.classList.remove('bolaMove5');
 
 /*Variavel para musica*/
 var musicaDoJogo = document.getElementById("musicaPlay");
+var tempoMaximo = 0;
+var tempoAtual = 0;
+var infoMusica = document.getElementById('id_musica')
+var infoArtista = document.getElementById('id_artista')
+
+
+
 
 function inicia() {
+    
     var telaInidico = document.getElementById('telaInicial');
     var musica = document.getElementById('select_musica')
     
+
+    if (musica.value == "#") {
+        alert("Escolha uma musica!!");
+        return false;
+    }
     for (let i = 0; i < listaMusica.length; i++) {
         if (musica.value == listaMusica[i].Musica) {
-            console.log("Elemento que tentarei esconder:", telaInidico);
-
+        
             musicaDoJogo.src = listaMusica[i].Endereço;
             musicaDoJogo.play();
+            infoArtista.innerHTML = listaMusica[i].Artista
+            infoMusica.innerHTML = listaMusica[i].Musica
+            tempoMaximo = Number(listaMusica[i].Tempo);
+            tempoMaximo = tempoMaximo*60;
+            
+            intervalo = setInterval(function(){
+                tempoAtual++;
+                console.log('Tempo Atual:', tempoAtual)
+            },1000)
             telaInidico.style.display = 'none'
             break;
         }
@@ -364,6 +386,11 @@ function movimentar() {
     id_pontos.innerHTML = pontuação;
     id_mult.innerHTML = multiplicador;
     id_combo.innerHTML = combo;
+
+    if (tempoAtual == tempoMaximo) {
+        alert('Partida finalizada')
+        velocidade = 0;
+    }
 
 }
 
@@ -566,11 +593,15 @@ window.addEventListener('keydown', function () {
     if (tecla == ' ') {
         if (pause == false) {
             velocidadePausa = velocidade;
+            tempoAtualPausado = tempoAtual
+            musicaDoJogo.pause();
             velocidade = 0;
+            tempoAtual = 0
             pause = true;
         } else {
             velocidade = velocidadePausa;
             pause = false;
+            musicaDoJogo.play();
         }
     }
 
