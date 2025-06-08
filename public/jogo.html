@@ -8,23 +8,102 @@
 
     <title>GuitarBeat - Jogo</title> <script src="./js/sessao.js"></script> 
     
-    <link rel="stylesheet" href="./css/estilo.css"> <link rel="stylesheet" href="./css/style.css"> 
+    <link rel="stylesheet" href="./css/style.css"> 
     
     <link rel="icon" href="pictures/logoNovoSemFundo.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     </head>
 
 <body>
+    <section class="telaInicial">
+        <div>
+            <h2>Escolha seu modo de Jogo:</h2>
+        </div>
+        <div class="escolha">
+            <span class="titulo">Genero Musical:</span>
+            <span><select id="select_musica">
+              <option value="#">Escolha o seu genero</option>
+              <option value="Rock">Rock</option>
+              <option value="Pop">Pop</option>
+              <option value="Hip Hop">Hip Hop</option>
+              <option value="Rap">Rap</option>
+              <option value="Eletrônica">Eletrônica</option>
+              <option value="Música Clássica">Música Clássica</option>
+              <option value="Jazz">Jazz</option>
+              <option value="Reggae">Reggae</option>
+              <option value="Samba">Samba</option>
+              <option value="Funk">Funk</option>
+              <option value="Sertanejo">Sertanejo</option>
+              <option value="Trap">Trap</option>
+              <option value="K-pop">K-pop</option>
+              <option value="Gospel">Gospel</option>
+              <option value="Country">Country</option>
+            </select></span>
+        </div>
+
+        <div class="escolha">
+            <span class="titulo">Escolha a Musical:</span>
+            <span><select id="select_musica">
+              <option value="#">Escolha o seu genero</option>
+              <option value="Rock">Rock</option>
+              <option value="Pop">Pop</option>
+              <option value="Hip Hop">Hip Hop</option>
+              <option value="Rap">Rap</option>
+              <option value="Eletrônica">Eletrônica</option>
+              <option value="Música Clássica">Música Clássica</option>
+              <option value="Jazz">Jazz</option>
+              <option value="Reggae">Reggae</option>
+              <option value="Samba">Samba</option>
+              <option value="Funk">Funk</option>
+              <option value="Sertanejo">Sertanejo</option>
+              <option value="Trap">Trap</option>
+              <option value="K-pop">K-pop</option>
+              <option value="Gospel">Gospel</option>
+              <option value="Country">Country</option>
+            </select></span>
+        </div>
+
+        <div class="instJogo">
+            <span>Teclas para jogar</span>
+            <span>A/S/D/K/L</span>
+        </div>
+
+        <div class="instJogo">
+            <span>Tecla para Pausar</span>
+            <span>Espaço</span>
+        </div>
+
+        <button class="botaoIniciar">Iniciar</button>
+
+    </section>
+
 
     <audio id="musica"></audio> 
+
+
     
     <section class="jogo-container"> 
 
-        <div>
-            <h1>Pontos: <span id="id_pontos">0</span>pts</h1> 
-            <h1>Multiplicador: <span id="id_mult">0</span>pts</h1> 
-            <h1>Combos: <span id="id_combo">0</span>pts</h1> 
-        </div>
+        <section  class="header">
+
+            <div class="headerBotao">
+                <a href="dashboard/dashboard.html" class="botaoVoltar">
+                    <img src="./pictures/botao.png" alt="">
+                </a>
+            </div>
+
+            <div class="informacaoJogo">
+                <h1>Pontuação: <span id="id_pontos">0</span>pts</h1> 
+                <h1>Multiplicador: <span id="id_mult">0</span>x</h1> 
+                <h1>Sequência de Notas: <span id="id_combo">0</span></h1> 
+            </div>
+
+            <div class="informacaoMusica">
+                <h1>Musica: <span id="id_musica">Music</span></h1> 
+                <h1>Artista: <span id="id_mult">Artista</span></h1> 
+            </div>
+
+        </section>
 
         <div class="tabuleiro">
             <div class="fora">

@@ -1,3 +1,27 @@
+/*Variavel para musica*/
+var musica = document.getElementById("musicaAtual");
+
+var listaMusicaRock = [
+    {
+        Genero : 'Rock',
+        Musica : 'Toxicity',
+        Artista : 'System of a Down',
+        Tempo : '3.50',
+        Endereço : '/home/dennis/Documentos/Faculdade/Pesquiva e Inovação/Projeto-Individual/public/musicas/Rock/Toxicity.mp3'
+
+    },
+    {
+        Genero : 'Rock',
+        Musica : 'Nightmare',
+        Artista : 'Avenged Sevenfold',
+        Tempo : '6.25',
+        Endereço : '/home/dennis/Documentos/Faculdade/Pesquiva e Inovação/Projeto-Individual/public/musicas/Rock/Nightmare.mp3'
+
+    }];
+
+
+
+
 // Variáveis de controle
 var alturaTabuleiro = 800; // Altura do tabuleiro
 var time = 0;
@@ -49,6 +73,7 @@ var tecla = event.key;
     } 
 
 });
+
 
 //Deixando a bola invisivel
 bolaMov1.classList.remove('bolaMove1');

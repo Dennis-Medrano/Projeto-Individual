@@ -1,17 +1,84 @@
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -19,53 +86,160 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
     display: block;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
+    margin: 0;
+    padding: 0;
+    font-family: "Permanent Marker", cursive;
+    background-color: black;
     line-height: 1;
-    overflow: hidden /*pagina ficar estatica*/
+    overflow: hidden
+        /*pagina ficar estatica*/
 }
-ol, ul {
+
+ol,
+ul {
     list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
     quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
     content: '';
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
 
-.jogo-container{
+.telaInicial {
+    position: absolute;
+
+    left: 62vh;
+    top: 12.5vh;
+
+    width: 75vh;
+    height: 75vh;
+
+    background-color: #222;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    border-radius: 20px;
+    font-size: 25px;
+}
+
+.telaInicial h2 {
+    font-size: 30px;
+    margin: 30px;
+    color: #e61d3f;
+}
+
+
+.escolha {
+    display: flex;
+    justify-content: center;
+}
+.instJogo{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#select_musica {
+
+    background-color: #222;
+    color: white;
+    height: 36px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0;
+    font-size: 25px;
+    margin: 5%;
+}
+
+.instJogo{
+    margin-top: 5%;
+}
+
+.botaoIniciar {
+    background-color: black; 
+    color: white;
+    font-size: 20px;
+    font-family: "Permanent Marker", cursive;
+    font-weight: bold; 
+    width: 40%;
+    padding: 15px 20px; 
+    margin-top: 10%;
+    border: none; 
+    border-radius: 50px;
+    transition: all 0.3s ease; 
+}
+
+.botaoIniciar:hover {
+    background-color: #e61d3f; 
+    transform: translateY(-2px); /* Eleva o botão levemente */
+}
+
+.jogo-container {
     padding: 0px;
     margin: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    z-index: 0;
 }
 
-.jogo-container{
+.jogo-container {
     color: white;
 }
 
-.jogo-container h1{
+.jogo-container h1 {
     text-align: center;
     font-size: 26px;
     z-index: 2;
     background-color: black;
-    width: 600px;
+    width: 100%;
 }
 
-.tabuleiro{
+.tabuleiro {
     position: relative;
     width: 600px;
     height: 800px;
@@ -76,7 +250,7 @@ table {
     z-index: -2;
 }
 
-.fora{
+.fora {
     margin: 0;
     display: flex;
     justify-content: flex-start;
@@ -85,49 +259,53 @@ table {
     z-index: -2;
 }
 
-.coluna1{
+.coluna1 {
     width: 20%;
     height: 100%;
     border-top: 2px solid red;
     border-left: 2px solid red;
-    border-bottom: 2px solid red;
+
     z-index: -2;
 }
-.coluna2{
+
+.coluna2 {
     width: 20%;
     height: 100%;
     border-top: 2px solid red;
     border-left: 2px solid red;
-    border-bottom: 2px solid red;
+
     z-index: -2;
 }
-.coluna3{
+
+.coluna3 {
     width: 20%;
     height: 100%;
     border-top: 2px solid red;
     border-left: 2px solid red;
-    border-bottom: 2px solid red;
+
     z-index: -2;
 }
-.coluna4{
+
+.coluna4 {
     width: 20%;
     height: 100%;
     border-top: 2px solid red;
     border-left: 2px solid red;
-    border-bottom: 2px solid red;
+
     z-index: -2;
 }
-.coluna5{
+
+.coluna5 {
     width: 20%;
     height: 100%;
     border-top: 2px solid red;
     border-left: 2px solid red;
     border-right: 2px solid red;
-    border-bottom: 2px solid red;
-    z-index: -2;
-}   
 
-.dentro{
+    z-index: -2;
+}
+
+.dentro {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,7 +314,7 @@ table {
     z-index: -2;
 }
 
-.bolaNormal{
+.bolaNormal {
     width: 75px;
     height: 75px;
     border-radius: 50%;
@@ -144,7 +322,7 @@ table {
     z-index: -2;
 }
 
-.quadrado1{
+.quadrado1 {
     width: 20%;
     height: 100%;
     border-left: 2px solid red;
@@ -153,19 +331,10 @@ table {
     justify-content: center;
     align-items: center;
     z-index: -2;
-        
+
 }
-.quadrado2{
-    width: 20%;
-    height: 100%;
-    border-left: 2px solid red;
-    border-bottom: 2px solid red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: -2;
-}
-.quadrado3{
+
+.quadrado2 {
     width: 20%;
     height: 100%;
     border-left: 2px solid red;
@@ -175,7 +344,8 @@ table {
     align-items: center;
     z-index: -2;
 }
-.quadrado4{
+
+.quadrado3 {
     width: 20%;
     height: 100%;
     border-left: 2px solid red;
@@ -185,7 +355,19 @@ table {
     align-items: center;
     z-index: -2;
 }
-.quadrado5{
+
+.quadrado4 {
+    width: 20%;
+    height: 100%;
+    border-left: 2px solid red;
+    border-bottom: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -2;
+}
+
+.quadrado5 {
     width: 20%;
     height: 100%;
     border-left: 2px solid red;
@@ -197,105 +379,168 @@ table {
     z-index: -2;
 }
 
-.bolaMove1{
+.bolaMove1 {
     position: absolute;
     z-index: -2;
-    top: 0;      
+    top: 0;
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    background-color:red;
-}
-.bolaMove2{
-    position: absolute;
-    z-index: -2;
-    top: 0;      
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    background-color:red;
-}
-.bolaMove3{
-    position: absolute;
-    z-index: -2;
-    top: 0;      
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    background-color:red;
-}
-.bolaMove4{
-    position: absolute;
-    z-index: -2;
-    top: 0;      
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    background-color:red;
-}
-.bolaMove5{
-    position: absolute;
-    z-index: -2;
-    top: 0;      
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    background-color:red;
+    background-color: red;
 }
 
-.bolaMove6{
+.bolaMove2 {
     position: absolute;
     z-index: -2;
-    top: 0;      
+    top: 0;
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    background-color:red;
+    background-color: red;
 }
 
-.bolaMove7{
+.bolaMove3 {
     position: absolute;
     z-index: -2;
-    top: 0;      
+    top: 0;
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    background-color:red;
+    background-color: red;
 }
 
-.bolaMove8{
+.bolaMove4 {
     position: absolute;
     z-index: -2;
-    top: 0;      
+    top: 0;
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    background-color:red;
+    background-color: red;
 }
 
-.bolaMove9{
+.bolaMove5 {
     position: absolute;
     z-index: -2;
-    top: 0;      
+    top: 0;
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    background-color:red;
-}
-.bolaMove10{
-    position: absolute;
-    z-index: -2;
-    top: 0;      
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    background-color:red;
+    background-color: red;
 }
 
-.bola1Click{
+.bolaMove6 {
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.bolaMove7 {
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.bolaMove8 {
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.bolaMove9 {
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.bolaMove10 {
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.bola1Click {
     z-index: -2;
     width: 75px;
     height: 75px;
     border-radius: 50%;
     background-color: green;
+}
+
+/*Sobre o Jogo*/
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+
+/*Botão para voltar*/
+
+.headerBotao {
+    width: 300px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    top: 30px;
+    left: 40px;
+}
+
+
+.headerBotao .botaoVoltar img {
+    width: 75px;
+    height: 75px;
+    background-image: url(../pictures/botao.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: none;
+}
+
+.headerBotao .botaoVoltar:hover img {
+    background-color: #e61d3f;
+    border-radius: 90%;
+    background-image: url(../pictures/botao.png);
+    background-size: cover;
+    box-shadow: 0 0 8px 5px #e61d3f;
+}
+
+
+/*Informação sobre a pontuação*/
+.informacaoJogo {
+    width: 300px;
+
+}
+
+/*Informação sobre o a Musica*/
+.informacaoMusica {
+    width: 300px;
+    position: relative;
+    top: 30px;
+    color: white;
+    background-color: none;
+    z-index: -2;
 }
