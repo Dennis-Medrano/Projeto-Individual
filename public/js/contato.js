@@ -1,25 +1,119 @@
-/*Variavel para musica*/
-var musica = document.getElementById("musicaAtual");
+
 
 var listaMusicaRock = [
     {
-        Genero : 'Rock',
-        Musica : 'Toxicity',
-        Artista : 'System of a Down',
-        Tempo : '3.50',
-        Endereço : '/home/dennis/Documentos/Faculdade/Pesquiva e Inovação/Projeto-Individual/public/musicas/Rock/Toxicity.mp3'
+        Genero: 'Rock',
+        Musica: 'Toxicity',
+        Artista: 'System of a Down',
+        Tempo: '3.50',
+        Endereço: './musicas/Rock/Toxicity.mp3'
 
     },
     {
-        Genero : 'Rock',
-        Musica : 'Nightmare',
-        Artista : 'Avenged Sevenfold',
-        Tempo : '6.25',
-        Endereço : '/home/dennis/Documentos/Faculdade/Pesquiva e Inovação/Projeto-Individual/public/musicas/Rock/Nightmare.mp3'
+        Genero: 'Rock',
+        Musica: 'Nightmare',
+        Artista: 'Avenged Sevenfold',
+        Tempo: '6.25',
+        Endereço: './musicas/Rock/Nightmare.mp3'
 
     }];
 
 
+function escolhaMusica() {
+    var genero = select_genero.value;
+    var musica = document.getElementById('select_musica')
+
+    if (genero == 'Rock') {
+        for (let i = 1; i <= listaMusicaRock.length; i++) {
+            musica.options[i].text = listaMusicaRock[i - 1].Musica;
+            
+        }
+    }
+    if (genero == 'Pop') {
+        for (let i = 1; i <= listaMusicaRock.length; i++) {
+            musica.options[i].text = listaMusicaRock[i - 1].Musica;
+            
+        }
+    }
+    if (genero == 'Hip Hop') {
+        for (let i = 1; i <= listaMusicaRock.length; i++) {
+            musica.options[i].text = listaMusicaRock[i - 1].Musica;
+            
+        }
+    }
+    if (genero == 'Rap') {
+        for (let i = 1; i <= listaMusicaRock.length; i++) {
+            musica.options[i].text = listaMusicaRock[i - 1].Musica;
+            
+        }
+    }
+    if (genero == 'Eletrônica') {
+        for (let i = 1; i <= listaMusicaRock.length; i++) {
+            musica.options[i].text = listaMusicaRock[i - 1].Musica;
+            
+        }
+    }
+    if (genero == 'Música Clássica') {
+        for (let i = 1; i <= listaMusicaRock.length; i++) {
+            musica.options[i].text = listaMusicaRock[i - 1].Musica;
+            
+        }
+    }
+    if (genero == 'Jazz') {
+        for (let i = 1; i <= listaMusicaRock.length; i++) {
+            musica.options[i].text = listaMusicaRock[i - 1].Musica;
+            
+        }
+    }
+    if (genero == 'Reggae') {
+        for (let i = 1; i <= listaMusicaRock.length; i++) {
+            musica.options[i].text = listaMusicaRock[i - 1].Musica;
+            
+        }
+    }
+    if (genero == 'Samba') {
+        for (let i = 1; i <= listaMusicaRock.length; i++) {
+            musica.options[i].text = listaMusicaRock[i - 1].Musica;
+            
+        }
+    }
+    if (genero == 'Funk') {
+        for (let i = 1; i <= listaMusicaRock.length; i++) {
+            musica.options[i].text = listaMusicaRock[i - 1].Musica;
+            
+        }
+    }
+    if (genero == 'Sertanejo') {
+        for (let i = 1; i <= listaMusicaRock.length; i++) {
+            musica.options[i].text = listaMusicaRock[i - 1].Musica;
+            
+        }
+    }
+    if (genero == 'Trap') {
+        for (let i = 1; i <= listaMusicaRock.length; i++) {
+            musica.options[i].text = listaMusicaRock[i - 1].Musica;
+            
+        }
+    }
+    if (genero == 'K-pop') {
+        for (let i = 1; i <= listaMusicaRock.length; i++) {
+            musica.options[i].text = listaMusicaRock[i - 1].Musica;
+            
+        }
+    }
+    if (genero == 'Gospel') {
+        for (let i = 1; i <= listaMusicaRock.length; i++) {
+            musica.options[i].text = listaMusicaRock[i - 1].Musica;
+            
+        }
+    }
+    if (genero == 'Country') {
+        for (let i = 1; i <= listaMusicaRock.length; i++) {
+            musica.options[i].text = listaMusicaRock[i - 1].Musica;
+            
+        }
+    }
+}
 
 
 // Variáveis de controle
@@ -29,15 +123,15 @@ var time = 0;
 //Variaveis para o jogo
 var pontuação = 0;
 var multiplicador = 1;
-var velocidade = 9; 
-var velocidadePausa =0
+var velocidade = 9;
+var velocidadePausa = 0
 var pause = false;
-var combo = 0 
+var combo = 0
 
 //Variaveis para musica
 var musicaTag = document.getElementById('musicaJogo');
 var musicaJogo = ''
-     
+
 //Variavel para inicio do jogo
 var inicio = true;
 
@@ -66,13 +160,13 @@ var posiçãoColuna4 = 0
 var posiçãoColuna5 = 0
 
 //Iniciar o evento
-window.addEventListener("keydown", function () {
-var tecla = event.key;
-    if (tecla == 'Enter') {
-        inicia()
-    } 
+// window.addEventListener("keydown", function () {
+//     var tecla = event.key;
+//     if (tecla == 'Enter') {
+//         inicia()
+//     }
 
-});
+// });
 
 
 //Deixando a bola invisivel
@@ -87,69 +181,86 @@ bolaMov5.classList.remove('bolaMove5');
 // bolaMov9.classList.remove('bolaMove9');
 // bolaMov10.classList.remove('bolaMove10');
 
+/*Variavel para musica*/
+var musicaDoJogo = document.getElementById("musicaPlay");
 
 function inicia() {
+    var telaInidico = document.getElementById('telaInicial');
+    var musica = document.getElementById('select_musica')
     
+    for (let i = 0; i < listaMusicaRock.length; i++) {
+        if (musica.value == listaMusicaRock[i].Musica) {
+            console.log("Elemento que tentarei esconder:", telaInidico);
+
+            musicaDoJogo.src = listaMusicaRock[i].Endereço;
+            musicaDoJogo.play();
+            telaInidico.style.display = 'none'
+            break;
+        }
+        
+    }
+    
+
     if (inicio == true) {
-      //Deixando a bola visivel para o jogador
-    bolaMov1.classList.add('bolaMove1');
-    bolaMov2.classList.add('bolaMove2');
-    bolaMov3.classList.add('bolaMove3');
-    bolaMov4.classList.add('bolaMove4');
-    bolaMov5.classList.add('bolaMove5');
-    // bolaMov6.classList.add('bolaMove6');
-    // bolaMov7.classList.add('bolaMove7');
-    // bolaMov8.classList.add('bolaMove8');
-    // bolaMov9.classList.add('bolaMove9');
-    // bolaMov10.classList.add('bolaMove10');
-    
-
-    posicaoAleatoria = Math.random()*150 - 150;
-    bolaMov1.style.left = '22.5px';
-    bolaMov1.style.top =  `${posicaoAleatoria}px`;
-
-    posicaoAleatoria = Math.random()*150 - 300;
-    bolaMov2.style.left = '142.5px';
-    bolaMov2.style.top = `${posicaoAleatoria}px`;
-    
-    posicaoAleatoria = Math.random()*150 - 450;
-    bolaMov3.style.left = '262.5px';
-    bolaMov3.style.top = `${posicaoAleatoria}px`;
-
-    posicaoAleatoria = Math.random()*150 - 650;
-    bolaMov4.style.left = '382.5px';
-    bolaMov4.style.top = `${posicaoAleatoria}px`;
-
-    posicaoAleatoria = Math.random()*150 - 800;
-    bolaMov5.style.left = '502.5px';
-    bolaMov5.style.top = `${posicaoAleatoria}px`;
+        //Deixando a bola visivel para o jogador
+        bolaMov1.classList.add('bolaMove1');
+        bolaMov2.classList.add('bolaMove2');
+        bolaMov3.classList.add('bolaMove3');
+        bolaMov4.classList.add('bolaMove4');
+        bolaMov5.classList.add('bolaMove5');
+        // bolaMov6.classList.add('bolaMove6');
+        // bolaMov7.classList.add('bolaMove7');
+        // bolaMov8.classList.add('bolaMove8');
+        // bolaMov9.classList.add('bolaMove9');
+        // bolaMov10.classList.add('bolaMove10');
 
 
+        posicaoAleatoria = Math.random() * 150 - 150;
+        bolaMov1.style.left = '22.5px';
+        bolaMov1.style.top = `${posicaoAleatoria}px`;
+
+        posicaoAleatoria = Math.random() * 150 - 300;
+        bolaMov2.style.left = '142.5px';
+        bolaMov2.style.top = `${posicaoAleatoria}px`;
+
+        posicaoAleatoria = Math.random() * 150 - 450;
+        bolaMov3.style.left = '262.5px';
+        bolaMov3.style.top = `${posicaoAleatoria}px`;
+
+        posicaoAleatoria = Math.random() * 150 - 650;
+        bolaMov4.style.left = '382.5px';
+        bolaMov4.style.top = `${posicaoAleatoria}px`;
+
+        posicaoAleatoria = Math.random() * 150 - 800;
+        bolaMov5.style.left = '502.5px';
+        bolaMov5.style.top = `${posicaoAleatoria}px`;
 
 
-    // posicaoAleatoria = Math.random()*150 - 500;
-    // bolaMov6.style.left = '22.5px';
-    // bolaMov6.style.top =  `${posicaoAleatoria}px`;
 
-    // posicaoAleatoria = Math.random()*150 - 600;
-    // bolaMov7.style.left = '142.5px';
-    // bolaMov7.style.top = `${posicaoAleatoria}px`;
-    
-    // posicaoAleatoria = Math.random()*150 - 200;
-    // bolaMov8.style.left = '262.5px';
-    // bolaMov8.style.top = `${posicaoAleatoria}px`;
 
-    // posicaoAleatoria = Math.random()*150 - 350;
-    // bolaMov9.style.left = '382.5px';
-    // bolaMov9.style.top = `${posicaoAleatoria}px`;
+        // posicaoAleatoria = Math.random()*150 - 500;
+        // bolaMov6.style.left = '22.5px';
+        // bolaMov6.style.top =  `${posicaoAleatoria}px`;
 
-    // posicaoAleatoria = Math.random()*150 - 500;
-    // bolaMov10.style.left = '502.5px';
-    // bolaMov10.style.top = `${posicaoAleatoria}px`;
-    
-    // Inicia animação
-    time = setInterval(movimentar, 20);  
-    } 
+        // posicaoAleatoria = Math.random()*150 - 600;
+        // bolaMov7.style.left = '142.5px';
+        // bolaMov7.style.top = `${posicaoAleatoria}px`;
+
+        // posicaoAleatoria = Math.random()*150 - 200;
+        // bolaMov8.style.left = '262.5px';
+        // bolaMov8.style.top = `${posicaoAleatoria}px`;
+
+        // posicaoAleatoria = Math.random()*150 - 350;
+        // bolaMov9.style.left = '382.5px';
+        // bolaMov9.style.top = `${posicaoAleatoria}px`;
+
+        // posicaoAleatoria = Math.random()*150 - 500;
+        // bolaMov10.style.left = '502.5px';
+        // bolaMov10.style.top = `${posicaoAleatoria}px`;
+
+        // Inicia animação
+        time = setInterval(movimentar, 20);
+    }
     inicio = false;
 }
 
@@ -158,12 +269,12 @@ function movimentar() {
     // Atualiza bolaMov1
     var topAtual1 = parseFloat(bolaMov1.style.top); // Converte a string para número
     if (topAtual1 >= (alturaTabuleiro)) {
-        posicaoAleatoria = Math.random()*75 - 100;
-        bolaMov1.style.top =  `${posicaoAleatoria}px`; // Volta para o topo
+        posicaoAleatoria = Math.random() * 75 - 100;
+        bolaMov1.style.top = `${posicaoAleatoria}px`; // Volta para o topo
         multiplicador = 1;
         combo = 0;
         velocidade = 9
-        
+
     } else {
         bolaMov1.style.top = (topAtual1 + velocidade) + "px"; // Soma e depois adiciona "px"
     }
@@ -171,7 +282,7 @@ function movimentar() {
     // Atualiza bolaMov2
     var topAtual2 = parseFloat(bolaMov2.style.top);
     if (topAtual2 >= (alturaTabuleiro)) {
-        posicaoAleatoria = Math.random()*75 - 500;
+        posicaoAleatoria = Math.random() * 75 - 500;
         bolaMov2.style.top = `${posicaoAleatoria}px`;
         multiplicador = 1;
         combo = 0;
@@ -183,7 +294,7 @@ function movimentar() {
     // Atualiza bolaMov3
     var topAtual3 = parseFloat(bolaMov3.style.top);
     if (topAtual3 >= (alturaTabuleiro)) {
-        posicaoAleatoria = Math.random()*75 - 750;
+        posicaoAleatoria = Math.random() * 75 - 750;
         bolaMov3.style.top = `${posicaoAleatoria}px`;
         multiplicador = 1;
         combo = 0;
@@ -195,7 +306,7 @@ function movimentar() {
     // Atualiza bolaMov4
     var topAtual4 = parseFloat(bolaMov4.style.top);
     if (topAtual4 >= (alturaTabuleiro)) {
-        posicaoAleatoria = Math.random()*75 - 400;
+        posicaoAleatoria = Math.random() * 75 - 400;
         bolaMov4.style.top = `${posicaoAleatoria}px`;
         multiplicador = 1;
         combo = 0;
@@ -207,7 +318,7 @@ function movimentar() {
     // Atualiza bolaMov5
     var topAtual5 = parseFloat(bolaMov5.style.top);
     if (topAtual5 >= (alturaTabuleiro)) {
-        posicaoAleatoria = Math.random()*75 - 300;
+        posicaoAleatoria = Math.random() * 75 - 300;
         bolaMov5.style.top = `${posicaoAleatoria}px`;
         multiplicador = 1;
         combo = 0;
@@ -224,7 +335,7 @@ function movimentar() {
     //     multiplicador = 1;
     //     combo = 0;
     //     velocidade = 9 // Volta para o topo
-        
+
     // } else {
     //     bolaMov6.style.top = (topAtual6 + velocidade) + "px"; // Soma e depois adiciona "px"
     // }
@@ -284,9 +395,9 @@ function movimentar() {
 }
 
 
-window.addEventListener('keydown', function() {
+window.addEventListener('keydown', function () {
     var tecla = event.key;
-    
+
     if (tecla == 'a' || tecla == 'A') {
         receptor1.classList.add('bola1Click');
         receptor1.classList.remove('bolaNormal');
@@ -304,23 +415,23 @@ window.addEventListener('keydown', function() {
         // console.log('Diferença:' + (posiçãoReceptor_final - posiçãoReceptor_inicial))
         // console.log('\n')
 
-        
+
         var posiçãoColuna1_inicial = bolaMov1.getBoundingClientRect().y;
-        var posiçãoColuna1_final = bolaMov1.getBoundingClientRect().y+ bolaMov1.getBoundingClientRect().height;
+        var posiçãoColuna1_final = bolaMov1.getBoundingClientRect().y + bolaMov1.getBoundingClientRect().height;
 
         var posiçãoReceptor_inicial = receptor1.getBoundingClientRect().y;
-        var posiçãoReceptor_final = receptor1.getBoundingClientRect().y+ receptor1.getBoundingClientRect().height;
-        
+        var posiçãoReceptor_final = receptor1.getBoundingClientRect().y + receptor1.getBoundingClientRect().height;
+
         // var posiçãoColuna1_1_inicial = bolaMov6.getBoundingClientRect().y;
         // var posiçãoColuna1_1_final = bolaMov6.getBoundingClientRect().y+ bolaMov6.getBoundingClientRect().height;
 
         if (posiçãoColuna1_final > posiçãoReceptor_inicial && posiçãoColuna1_inicial < posiçãoReceptor_final) {
-            posicaoAleatoria = Math.random()*150 - 150;
+            posicaoAleatoria = Math.random() * 150 - 150;
             bolaMov1.style.top = `${posicaoAleatoria}px`;
-            pontuação += 100*multiplicador;
+            pontuação += 100 * multiplicador;
             combo++
             velocidade += 0.01
-        } 
+        }
         // else if (posiçãoColuna1_1_final > posiçãoReceptor_inicial &&  posiçãoColuna1_1_inicial < posiçãoReceptor_final) {
         //     posicaoAleatoria = Math.random()*150 - 150;posicaoAleatoria = Math.random()*
         //     150 - 150;
@@ -333,29 +444,29 @@ window.addEventListener('keydown', function() {
             combo = 0;
             velocidade = 9
         }
-        
+
     }
-    
+
     if (tecla == 's' || tecla == 'S') {
         receptor2.classList.add('bola1Click');
         receptor2.classList.remove('bolaNormal');
 
         var posiçãoColuna2_inicial = bolaMov2.getBoundingClientRect().y;
-        var posiçãoColuna2_final = bolaMov2.getBoundingClientRect().y+ bolaMov2.getBoundingClientRect().height;
+        var posiçãoColuna2_final = bolaMov2.getBoundingClientRect().y + bolaMov2.getBoundingClientRect().height;
 
         // var posiçãoColuna2_2_inicial = bolaMov7.getBoundingClientRect().y;
         // var posiçãoColuna2_2_final = bolaMov7.getBoundingClientRect().y+ bolaMov7.getBoundingClientRect().height;
 
         var posiçãoReceptor_inicial = receptor2.getBoundingClientRect().y;
-        var posiçãoReceptor_final = receptor2.getBoundingClientRect().y+ receptor2.getBoundingClientRect().height;     
+        var posiçãoReceptor_final = receptor2.getBoundingClientRect().y + receptor2.getBoundingClientRect().height;
 
         if (posiçãoColuna2_final > posiçãoReceptor_inicial && posiçãoColuna2_inicial < posiçãoReceptor_final) {
-            posicaoAleatoria = Math.random()*150 - 150;
+            posicaoAleatoria = Math.random() * 150 - 150;
             bolaMov2.style.top = `${posicaoAleatoria}px`;
-            pontuação += 100*multiplicador;
+            pontuação += 100 * multiplicador;
             combo++
             velocidade += 0.01
-        } 
+        }
         // else if (posiçãoColuna2_2_final > posiçãoReceptor_inicial && posiçãoColuna2_2_inicial < posiçãoReceptor_final) {
         //     posicaoAleatoria = Math.random()*150 - 150;
         //     bolaMov7.style.top = `${posicaoAleatoria}px`;
@@ -374,23 +485,23 @@ window.addEventListener('keydown', function() {
         receptor3.classList.remove('bolaNormal');
 
         var posiçãoColuna3_inicial = bolaMov3.getBoundingClientRect().y;
-        var posiçãoColuna3_final = bolaMov3.getBoundingClientRect().y+ bolaMov3.getBoundingClientRect().height;
+        var posiçãoColuna3_final = bolaMov3.getBoundingClientRect().y + bolaMov3.getBoundingClientRect().height;
 
         // var posiçãoColuna3_3_inicial = bolaMov8.getBoundingClientRect().y;
         // var posiçãoColuna3_3_final = bolaMov8.getBoundingClientRect().y+ bolaMov8.getBoundingClientRect().height;
-        
+
         var posiçãoReceptor_inicial = receptor3.getBoundingClientRect().y;
-        var posiçãoReceptor_final = receptor3.getBoundingClientRect().y+ receptor3.getBoundingClientRect().height;
-        
-        
+        var posiçãoReceptor_final = receptor3.getBoundingClientRect().y + receptor3.getBoundingClientRect().height;
+
+
 
         if (posiçãoColuna3_final > posiçãoReceptor_inicial && posiçãoColuna3_inicial < posiçãoReceptor_final) {
-            posicaoAleatoria = Math.random()*150 - 150;
+            posicaoAleatoria = Math.random() * 150 - 150;
             bolaMov3.style.top = `${posicaoAleatoria}px`;
-            pontuação += 100*multiplicador;
+            pontuação += 100 * multiplicador;
             combo++
             velocidade += 0.01
-        } 
+        }
         // else if (posiçãoColuna3_3_final > posiçãoReceptor_inicial && posiçãoColuna3_3_inicial < posiçãoReceptor_final) {
         //     posicaoAleatoria = Math.random()*150 - 150;
         //     bolaMov8.style.top = `${posicaoAleatoria}px`;
@@ -409,23 +520,23 @@ window.addEventListener('keydown', function() {
         receptor4.classList.remove('bolaNormal');
 
         var posiçãoColuna4_inicial = bolaMov4.getBoundingClientRect().y;
-        var posiçãoColuna4_final = bolaMov4.getBoundingClientRect().y+ bolaMov4.getBoundingClientRect().height;
-        
+        var posiçãoColuna4_final = bolaMov4.getBoundingClientRect().y + bolaMov4.getBoundingClientRect().height;
+
         // var posiçãoColuna4_4_inicial = bolaMov9.getBoundingClientRect().y;
         // var posiçãoColuna4_4_final = bolaMov9.getBoundingClientRect().y+ bolaMov9.getBoundingClientRect().height;
 
         var posiçãoReceptor_inicial = receptor4.getBoundingClientRect().y;
-        var posiçãoReceptor_final = receptor4.getBoundingClientRect().y+ receptor4.getBoundingClientRect().height;
-        
-        
+        var posiçãoReceptor_final = receptor4.getBoundingClientRect().y + receptor4.getBoundingClientRect().height;
+
+
 
         if (posiçãoColuna4_final > posiçãoReceptor_inicial && posiçãoColuna4_inicial < posiçãoReceptor_final) {
-            posicaoAleatoria = Math.random()*150 - 150;
+            posicaoAleatoria = Math.random() * 150 - 150;
             bolaMov4.style.top = `${posicaoAleatoria}px`;
-            pontuação += 100*multiplicador;
+            pontuação += 100 * multiplicador;
             combo++
             velocidade += 0.01
-        } 
+        }
         // else if (posiçãoColuna4_4_final > posiçãoReceptor_inicial && posiçãoColuna4_4_inicial < posiçãoReceptor_final) {
         //     posicaoAleatoria = Math.random()*150 - 150;
         //     bolaMov9.style.top = `${posicaoAleatoria}px`;
@@ -443,30 +554,30 @@ window.addEventListener('keydown', function() {
         receptor5.classList.remove('bolaNormal');
 
         var posiçãoColuna5_inicial = bolaMov5.getBoundingClientRect().y;
-        var posiçãoColuna5_final = bolaMov5.getBoundingClientRect().y+ bolaMov5.getBoundingClientRect().height;
+        var posiçãoColuna5_final = bolaMov5.getBoundingClientRect().y + bolaMov5.getBoundingClientRect().height;
 
         // var posiçãoColuna5_5_inicial = bolaMov10.getBoundingClientRect().y;
         // var posiçãoColuna5_5_final = bolaMov10.getBoundingClientRect().y+ bolaMov10.getBoundingClientRect().height;
 
         var posiçãoReceptor_inicial = receptor5.getBoundingClientRect().y;
         var posiçãoReceptor_final = receptor5.getBoundingClientRect().y + receptor5.getBoundingClientRect().height;
-        
-        
+
+
 
         if (posiçãoColuna5_final > posiçãoReceptor_inicial && posiçãoColuna5_inicial < posiçãoReceptor_final) {
-            posicaoAleatoria = Math.random()*150 - 150;
+            posicaoAleatoria = Math.random() * 150 - 150;
             bolaMov5.style.top = `${posicaoAleatoria}px`;
-            pontuação += 100*multiplicador;
+            pontuação += 100 * multiplicador;
             combo++
             velocidade += 0.01
-        } 
+        }
         // else if (posiçãoColuna5_5_final > posiçãoReceptor_inicial && posiçãoColuna5_5_inicial < posiçãoReceptor_final) {
         //     posicaoAleatoria = Math.random()*150 - 150;
         //     bolaMov10.style.top = `${posicaoAleatoria}px`;
         //     pontuação += 100*multiplicador;
         //     combo++
         // }
-         else {
+        else {
             multiplicador = 1;
             combo = 0;
             velocidade = 9
@@ -475,9 +586,9 @@ window.addEventListener('keydown', function() {
     }
 
     if (combo == 10 || combo == 20 || combo == 30 || combo == 50 || combo == 100) {
-        multiplicador = multiplicador*2;
-        velocidade = velocidade + velocidade*0.1;
-    } 
+        multiplicador = multiplicador * 2;
+        velocidade = velocidade + velocidade * 0.1;
+    }
 
     if (tecla == ' ') {
         if (pause == false) {
@@ -497,10 +608,10 @@ window.addEventListener('keydown', function() {
 
 })
 
-window.addEventListener('keyup', function() {
+window.addEventListener('keyup', function () {
     var tecla = event.key;
-    
-    
+
+
     if (tecla == 'a' || tecla == 'A') {
         receptor1.classList.remove('bola1Click');
         receptor1.classList.add('bolaNormal');

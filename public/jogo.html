@@ -8,58 +8,50 @@
 
     <title>GuitarBeat - Jogo</title> <script src="./js/sessao.js"></script> 
     
-    <link rel="stylesheet" href="./css/style.css"> 
+    <link rel="stylesheet" href="./css/musica.css"> 
     
     <link rel="icon" href="pictures/logoNovoSemFundo.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     </head>
 
 <body>
-    <section class="telaInicial">
+    <section id="telaInicial" class="telaInicial">
         <div>
             <h2>Escolha seu modo de Jogo:</h2>
         </div>
         <div class="escolha">
             <span class="titulo">Genero Musical:</span>
-            <span><select id="select_musica">
-              <option value="#">Escolha o seu genero</option>
-              <option value="Rock">Rock</option>
-              <option value="Pop">Pop</option>
-              <option value="Hip Hop">Hip Hop</option>
-              <option value="Rap">Rap</option>
-              <option value="Eletrônica">Eletrônica</option>
-              <option value="Música Clássica">Música Clássica</option>
-              <option value="Jazz">Jazz</option>
-              <option value="Reggae">Reggae</option>
-              <option value="Samba">Samba</option>
-              <option value="Funk">Funk</option>
-              <option value="Sertanejo">Sertanejo</option>
-              <option value="Trap">Trap</option>
-              <option value="K-pop">K-pop</option>
-              <option value="Gospel">Gospel</option>
-              <option value="Country">Country</option>
-            </select></span>
+            <span>
+                <select id="select_genero" onclick="escolhaMusica()">
+                    <option value="#">Selecione uma das opções</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Hip Hop">Hip Hop</option>
+                    <option value="Rap">Rap</option>
+                    <option value="Eletrônica">Eletrônica</option>
+                    <option value="Música Clássica">Música Clássica</option>
+                    <option value="Jazz">Jazz</option>
+                    <option value="Reggae">Reggae</option>
+                    <option value="Samba">Samba</option>
+                    <option value="Funk">Funk</option>
+                    <option value="Sertanejo">Sertanejo</option>
+                    <option value="Trap">Trap</option>
+                    <option value="K-pop">K-pop</option>
+                    <option value="Gospel">Gospel</option>
+                    <option value="Country">Country</option>
+                </select>
+            </span>
         </div>
 
-        <div class="escolha">
+        <div class="escolha" onclick="escolhaMusica()">
             <span class="titulo">Escolha a Musical:</span>
             <span><select id="select_musica">
-              <option value="#">Escolha o seu genero</option>
-              <option value="Rock">Rock</option>
-              <option value="Pop">Pop</option>
-              <option value="Hip Hop">Hip Hop</option>
-              <option value="Rap">Rap</option>
-              <option value="Eletrônica">Eletrônica</option>
-              <option value="Música Clássica">Música Clássica</option>
-              <option value="Jazz">Jazz</option>
-              <option value="Reggae">Reggae</option>
-              <option value="Samba">Samba</option>
-              <option value="Funk">Funk</option>
-              <option value="Sertanejo">Sertanejo</option>
-              <option value="Trap">Trap</option>
-              <option value="K-pop">K-pop</option>
-              <option value="Gospel">Gospel</option>
-              <option value="Country">Country</option>
+              <option value="#">Selecione uma das opções</option>
+              <option id="musica1">musica1</option>
+              <option id="musica2">musica2</option>
+              <option id="musica3">musica3</option>
+              <option id="musica4">musica4</option>
+              <option id="musica5">musica5</option>
             </select></span>
         </div>
 
@@ -73,12 +65,12 @@
             <span>Espaço</span>
         </div>
 
-        <button class="botaoIniciar">Iniciar</button>
+        <button class="botaoIniciar" onclick="inicia()">Iniciar</button>
 
     </section>
 
 
-    <audio id="musica"></audio> 
+    <audio id="musicaPlay"></audio> 
 
 
     

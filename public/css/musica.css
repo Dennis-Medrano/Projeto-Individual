@@ -139,15 +139,11 @@ table {
 
 .telaInicial {
     position: absolute;
-
     left: 62vh;
     top: 12.5vh;
-
     width: 75vh;
     height: 75vh;
-
     background-color: #222;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -182,7 +178,7 @@ table {
     align-items: center;
 }
 
-#select_musica {
+select {
 
     background-color: #222;
     color: white;
@@ -194,6 +190,17 @@ table {
     margin: 5%;
 }
 
+select:hover {
+
+    background-color: #e61d3f;
+    color: white;
+    height: 36px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0;
+    font-size: 25px;
+    margin: 5%;
+}
 .instJogo{
     margin-top: 5%;
 }
@@ -493,6 +500,8 @@ table {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    height: 30%;
+    background-color: black;
 }
 
 
@@ -508,6 +517,8 @@ table {
     position: relative;
     top: 30px;
     left: 40px;
+    height: 120px;
+    
 }
 
 
@@ -531,8 +542,9 @@ table {
 
 /*Informação sobre a pontuação*/
 .informacaoJogo {
-    width: 300px;
-
+    width: 600px;
+    background-color: black;
+    
 }
 
 /*Informação sobre o a Musica*/
@@ -542,5 +554,5 @@ table {
     top: 30px;
     color: white;
     background-color: none;
-    z-index: -2;
+    
 }
