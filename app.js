@@ -20,6 +20,7 @@ var usuarioRouter = require("./src/routes/usuarios");
 var avisosRouter = require("./src/routes/avisos");
 var medidasRouter = require("./src/routes/medidas");
 var kpisRouter = require("./src/routes/kpis");
+var jogoRouter = require("./src/routes/jogo");
 
 
 app.use(express.json());
@@ -33,6 +34,7 @@ app.use("/usuarios", usuarioRouter);
 app.use("/avisos", avisosRouter);
 app.use("/medidas", medidasRouter);
 app.use("/kpis", kpisRouter);
+app.use("/jogo", jogoRouter);
 
 
 app.listen(PORTA_APP, function () {
