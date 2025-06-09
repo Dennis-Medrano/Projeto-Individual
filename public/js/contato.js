@@ -1,5 +1,3 @@
-
-
 var listaMusica = [
     {
         Genero: 'Rock',
@@ -16,77 +14,149 @@ var listaMusica = [
         Tempo: '6.25',
         Endereço: './musicas/Rock/Nightmare.mp3'
 
-    }];
+    },
+    {
+        Genero: 'Rock',
+        Musica: 'Its my life',
+        Artista: 'Bon Jovi',
+        Tempo: '4.35',
+        Endereço: './musicas/Rock/Its My Life.mp3'
+
+    },
+    {
+        Genero: 'Rock',
+        Musica: 'The Emptiness Machine',
+        Artista: 'Link Park',
+        Tempo: '3.3',
+        Endereço: './musicas/Rock/The Emptiness Machine.mp3'
+
+    },
+    {
+        Genero: 'Rock',
+        Musica: 'Smells Like Teen Spirit',
+        Artista: 'Nirvana',
+        Tempo: '4.5',
+        Endereço: './musicas/Rock/Smells Like Teen Spirit.mp3'
+
+    },
+    {
+        Genero: 'Pop',
+        Musica: 'Shape of You',
+        Artista: 'Ed Sheeran',
+        Tempo: '4.33',
+        Endereço: './musicas/Pop/Shape of You.mp3'
+
+    },
+    {
+        Genero: 'Pop',
+        Musica: 'Bad Romance',
+        Artista: 'Lady Gaga',
+        Tempo: '5.18',
+        Endereço: './musicas/Pop/Bad Romance.mp3'
+
+    },
+    {
+        Genero: 'K-pop',
+        Musica: 'GANGNAM STYLE',
+        Artista: 'PSY',
+        Tempo: '4.23',
+        Endereço: './musicas/Kpop/GANGNAM STYLE.mp3'
+
+    },
+    {
+        Genero: 'K-pop',
+        Musica: 'FANCY',
+        Artista: 'TWICE',
+        Tempo: '3.5',
+        Endereço: './musicas/Kpop/FANCY.mp3'
+
+    },
+    {
+        Genero: 'Rap',
+        Musica: 'rockstar',
+        Artista: 'Post Malone',
+        Tempo: '4.12',
+        Endereço: './musicas/Rap/rockstar.mp3'
+
+    },
+    {
+        Genero: 'Rap',
+        Musica: 'SICKO MODE',
+        Artista: 'Travis Scott',
+        Tempo: '5.33',
+        Endereço: './musicas/Rap/SICKO MODE.mp3'
+
+    },
+    {
+        Genero: 'Reggae',
+        Musica: 'No Woman No Cry',
+        Artista: 'Bob Marley',
+        Tempo: '7.11',
+        Endereço: './musicas/Reggae/No Woman No Cry.mp3'
+
+    },
+    {
+        Genero: 'Reggae',
+        Musica: 'Three Little Birds',
+        Artista: 'Bob Marley',
+        Tempo: '3.11',
+        Endereço: './musicas/Reggae/Three Little Birds.mp3'
+
+    },
+    {
+        Genero: 'Sertanejo',
+        Musica: 'Os Anjos Cantam',
+        Artista: 'Jorge & Mateus',
+        Tempo: '3.27',
+        Endereço: './musicas/Sertanejo/Os Anjos Cantam.mp3'
+
+    },
+    {
+        Genero: 'Sertanejo',
+        Musica: 'Infiel',
+        Artista: 'Marília Mendonça',
+        Tempo: '3.30',
+        Endereço: './musicas/Sertanejo/Infiel.mp3'
+
+    },
+    {
+        Genero: 'Trap',
+        Musica: 'Bad and Boujee',
+        Artista: 'Migos',
+        Tempo: '3.30',
+        Endereço: './musicas/Trap/Bad and Boujee.mp3'
+
+    },
+    {
+        Genero: 'Trap',
+        Musica: 'goosebumps',
+        Artista: 'Travis Scott',
+        Tempo: '3.30',
+        Endereço: './musicas/Trap/goosebumps.mp3'
+
+    }
+];
 
 
 function escolhaMusica() {
-    var genero = select_genero.value;
-    var musica = document.getElementById('select_musica')
-    var contador = 0;
-    for (let i = 0; i < listaMusica.length; i++) {
-        if (genero == 'Rock') {
-            musica.options[contador+1].text = listaMusica[contador].Musica;
-            contador++
-        }
-        if (genero == 'Pop') {
-            musica.options[contador+1].text = listaMusica[contador].Musica;
-            contador++
-        }
-        if (genero == 'Hip Hop') {
-            musica.options[contador+1].text = listaMusica[contador].Musica;
-            contador++
-        }
-        if (genero == 'Rap') {
-            musica.options[contador+1].text = listaMusica[contador].Musica;
-            contador++
-        }
-        if (genero == 'Eletrônica') {
-            musica.options[contador+1].text = listaMusica[contador].Musica;
-            contador++
-        }
-        if (genero == 'Música Clássica') {
-            musica.options[contador+1].text = listaMusica[contador].Musica;
-            contador++
-        }
-        if (genero == 'Jazz') {
-            musica.options[contador+1].text = listaMusica[contador].Musica;
-            contador++
-        }
-        if (genero == 'Reggae') {
-            musica.options[contador+1].text = listaMusica[contador].Musica;
-            contador++
-        }
-        if (genero == 'Samba') {
-            musica.options[contador+1].text = listaMusica[contador].Musica;
-            contador++
-        }
-        if (genero == 'Funk') {
-            musica.options[contador+1].text = listaMusica[contador].Musica;
-            contador++
-        }
-        if (genero == 'Sertanejo') {
-            musica.options[contador+1].text = listaMusica[contador].Musica;
-            contador++
-        }
-        if (genero == 'Trap') {
-            musica.options[contador+1].text = listaMusica[contador].Musica;
-            contador++
-        }
-        if (genero == 'K-pop') {
-            musica.options[contador+1].text = listaMusica[contador].Musica;
-            contador++
-        }
-        if (genero == 'Gospel') {
-            musica.options[contador+1].text = listaMusica[contador].Musica;
-            contador++
-        }
-        if (genero == 'Country') {
-            musica.options[contador+1].text = listaMusica[contador].Musica;
-            contador++
-        }
+  
+  var genero = document.getElementById('select_genero').value;
+  var selectMusica = document.getElementById('select_musica');
+
+  selectMusica.length = 1; //Limpa os selects
+
+
+  for (var i = 0; i < listaMusica.length; i++) {
+    if (listaMusica[i].Genero == genero) {
+      var opcao = document.createElement('option');
+      opcao.text = listaMusica[i].Musica;
+      opcao.value = listaMusica[i].Musica;
+      selectMusica.add(opcao);
     }
-    
+  }
 }
+
+
 
 
 // Variáveis de controle

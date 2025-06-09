@@ -60,9 +60,9 @@
 
         <div class="container-dash">
             <div class="kpi-superior">
-                <div class="kpi">Score<span class="valorScore">0</span></div>
-                <div class="kpi">Velocidade Máxima Atingida<span class="valorScore">0</span></div>
-                <div class="kpi">Multiplicador Máximo Atingido<span class="valorScore">0</span></div>
+                <div class="kpi">Maior Score<span id="id_score" class="valorScore">0</span></div>
+                <div class="kpi">Musica com maior Score:<span id="id_scoreMusica" class="valorScore">Toxicity</span></div>
+                <div class="kpi">Rank Atual:<span id="id_rank" class="valorScore">0</span></div>
             </div>
 
             <div class="kpi-inferior">
@@ -96,7 +96,11 @@
     
 
     function obterDados() {
-        var id_usuario = sessionStorage.ID_USUARIO;
+        var id_usuario = sessionStorage.ID_USUARIO
+        
+        var score = document.getElementById('id_score')
+        var scoreMusica = document.getElementById('id_scoreMusica')
+        var rank = document.getElementById('id_rank')
 
         // Graficos de linha ------------------------------------------------------------------------------------------------------
         fetch(`/kpis/Graficolinha/${id_usuario}`).then(function (response) {
@@ -119,7 +123,7 @@
         })
             .then(function (data) {
                 console.log(data);
-                plotarKpiUltimo(data);
+                
             })
             .catch(function (err) {
                 console.log(err);
