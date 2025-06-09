@@ -27,7 +27,7 @@
 
 <!-- <body onload=" atualizarFeed()"> -->
 
-<body onload="plotarGraficoLinha()">
+<body onload="obterDados()">
 
     <div class="janela">
         <div class="header-left">
@@ -96,8 +96,8 @@
     
 
     function obterDados() {
-        var id_usuario = sessionStorage.ID_USUARIO
-        
+        var id_usuario = Number(sessionStorage.ID_USUARIO)
+
         var score = document.getElementById('id_score')
         var scoreMusica = document.getElementById('id_scoreMusica')
         var rank = document.getElementById('id_rank')
@@ -107,22 +107,9 @@
 
             return response.json();
         })
-            .then(function (data) {
-                console.log(data);
-                plotarGraficoLinha(data);
-            })
-            .catch(function (err) {
-                console.log(err);
-            })
-
-
-        // kppi de ultimo dia sem vazamento ------------------------------------------------------------------------------------------------------
-        fetch(`/kpis/kpiSuperior/${id_usuario}`).then(function (response) {
-
-            return response.json();
-        })
-            .then(function (data) {
-                console.log(data);
+            .then(function (dataLinha) {
+                console.log(dataLinha);
+                plotarGraficoLinha(dataLinha)
                 
             })
             .catch(function (err) {
@@ -130,33 +117,57 @@
             })
 
 
-        // kppi de sensores ativos ------------------------------------------------------------------------------------------------------
-        fetch(`/kpis/rank/${id_usuario}`).then(function (response) {
-
+        // kppi  ------------------------------------------------------------------------------------------------------
+        fetch(`/kpis/kpiSuperior/${id_usuario}`).then(function (response) {
+            
             return response.json();
-        })
-            .then(function (data) {
-                console.log(data);
-                plotarKpiAtivos(data);
+        }).then(function (data) {
+            console.log('data', data)
+                document.getElementById('id_score').innerHTML = data[0].maior_score
+                document.getElementById('id_scoreMusica').innerHTML = data[0].musica_maior_score
+                
             })
             .catch(function (err) {
                 console.log(err);
             })
 
 
+        // kppi  ------------------------------------------------------------------------------------------------------
+        // fetch(`/kpis/rank/${id_usuario}`).then(function (response) {
+
+        //     return response.json();
+        // })
+        //     .then(function (data) {
+        //         console.log(data);
+        //         plotarKpiAtivos(data);
+        //     })
+        //     .catch(function (err) {
+        //         console.log(err);
+        //     })
+
+
     }
 
-    function plotarGraficoLinha() {
+    function plotarGraficoLinha(dataLinha) {
+
+        var score = [];
+        var Data_Registro = [];
+
+        
+        for (let i = 0; i < dataLinha.length; i++) {
+            score.push(dataLinha[i].Score)
+            Data_Registro.push(dataLinha[i].dataRegistro)
+        }
        
         const ctx = document.getElementById('graficoLinha').getContext('2d');
 
        
-        const labels = ['Partida 1', 'Partida 2', 'Partida 3', 'Partida 4', 'Partida 5', 'Partida 6'];
+        const labels = Data_Registro
         const mockData = {
             labels: labels,
             datasets: [{
                 label: 'Pontuação por Partida',
-                data: [15200, 25500, 22100, 31000, 45600, 39800], 
+                data: score, 
                 fill: true,
                 borderColor: '#e61d3f', 
                 backgroundColor: 'rgba(230, 29, 63, 0.2)', 

@@ -1,11 +1,11 @@
 var database = require("../database/config")
 
-function kpiSuperior(id_usuario) {
+function kpiSuperior(ID_USUARIO) {
     var instrucao = `
         SELECT
             Score AS maior_score,
             nomeMusica AS musica_maior_score FROM vw_Game
-            WHERE id_usuario = ${id_usuario}
+            WHERE id_usuario = ${ID_USUARIO}
                 ORDER BY Score DESC
                 LIMIT 1;
     `;
@@ -14,7 +14,7 @@ function kpiSuperior(id_usuario) {
     return database.executar(instrucao);
 }
 
-function rank(id_usuario) {
+function rank(ID_USUARIO) {
     var instrucao = `
         
     `;
@@ -23,9 +23,14 @@ function rank(id_usuario) {
     return database.executar(instrucao);
 }
 
-function Graficolinha(id_usuario) {
+function Graficolinha(ID_USUARIO) {
     var instrucao = `
-        
+        SELECT
+            Score,
+            DATE_FORMAT(dataRegistro, '%d-%m - %H:%i') AS dataRegistro
+            FROM vw_Game
+            WHERE id_usuario = ${ID_USUARIO}
+                ORDER BY dataRegistro DESC;
     `;
 
     console.log("Executando a instrução SQL: \n" + instrucao);

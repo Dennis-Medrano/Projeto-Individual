@@ -1,8 +1,10 @@
 var database = require("../database/config")
+console.log('Cheguei no model')
 
-function jogo() {
+function jogoInserir(pontuacao,fkJogador,fkMusica) {
     var instrucao = `
-        
+        insert into tentativa (fkUsuario,fkMusica,score,dataRegistro) values
+            (${fkJogador},${fkMusica},${pontuacao},default);
     `;
 
     console.log("Executando a instrução SQL: \n" + instrucao);
@@ -10,5 +12,5 @@ function jogo() {
 }
 
 module.exports = {
-    jogo
+    jogoInserir
 };

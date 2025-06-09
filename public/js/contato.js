@@ -3,7 +3,7 @@ var listaMusica = [
         Genero: 'Rock',
         Musica: 'Toxicity',
         Artista: 'System of a Down',
-        Tempo: '3.50',
+        Tempo: '3.5',
         Endereço: './musicas/Rock/Toxicity.mp3'
 
     },
@@ -139,21 +139,21 @@ var listaMusica = [
 
 
 function escolhaMusica() {
-  
-  var genero = document.getElementById('select_genero').value;
-  var selectMusica = document.getElementById('select_musica');
 
-  selectMusica.length = 1; //Limpa os selects
+    var genero = document.getElementById('select_genero').value;
+    var selectMusica = document.getElementById('select_musica');
+
+    selectMusica.length = 1; //Limpa os selects
 
 
-  for (var i = 0; i < listaMusica.length; i++) {
-    if (listaMusica[i].Genero == genero) {
-      var opcao = document.createElement('option');
-      opcao.text = listaMusica[i].Musica;
-      opcao.value = listaMusica[i].Musica;
-      selectMusica.add(opcao);
+    for (var i = 0; i < listaMusica.length; i++) {
+        if (listaMusica[i].Genero == genero) {
+            var opcao = document.createElement('option');
+            opcao.text = listaMusica[i].Musica;
+            opcao.value = listaMusica[i].Musica;
+            selectMusica.add(opcao);
+        }
     }
-  }
 }
 
 
@@ -168,7 +168,7 @@ var pontuação = 0;
 var multiplicador = 1;
 var velocidade = 9;
 var velocidadePausa = 0
-var tempoAtualPausado=0
+var tempoAtualPausado = 0
 var pause = false;
 var combo = 0
 
@@ -231,15 +231,16 @@ var tempoMaximo = 0;
 var tempoAtual = 0;
 var infoMusica = document.getElementById('id_musica')
 var infoArtista = document.getElementById('id_artista')
+var idMusicaBD = 0
 
 
 
 
 function inicia() {
-    
+
     var telaInidico = document.getElementById('telaInicial');
     var musica = document.getElementById('select_musica')
-    
+
 
     if (musica.value == "#") {
         alert("Escolha uma musica!!");
@@ -247,24 +248,28 @@ function inicia() {
     }
     for (let i = 0; i < listaMusica.length; i++) {
         if (musica.value == listaMusica[i].Musica) {
-        
+
             musicaDoJogo.src = listaMusica[i].Endereço;
             musicaDoJogo.play();
+
             infoArtista.innerHTML = listaMusica[i].Artista
             infoMusica.innerHTML = listaMusica[i].Musica
+
+            idMusicaBD = i+1; //fkMusica
+
             tempoMaximo = Number(listaMusica[i].Tempo);
-            tempoMaximo = tempoMaximo*60;
-            
-            intervalo = setInterval(function(){
+            tempoMaximo = tempoMaximo * 60;
+
+            intervalo = setInterval(function () {
                 tempoAtual++;
-                console.log('Tempo Atual:', tempoAtual)
-            },1000)
+                // console.log('Tempo Atual:', tempoAtual)
+            }, 1000)
             telaInidico.style.display = 'none'
             break;
         }
-        
+
     }
-    
+
 
     if (inicio == true) {
         //Deixando a bola visivel para o jogador
@@ -457,9 +462,11 @@ function movimentar() {
     id_mult.innerHTML = multiplicador;
     id_combo.innerHTML = combo;
 
-    if (tempoAtual == tempoMaximo) {
+    if (tempoAtual > tempoMaximo) {
         alert('Partida finalizada')
+        tempoAtual=0
         velocidade = 0;
+        finalizarPartida();
     }
 
 }
@@ -711,3 +718,45 @@ window.addEventListener('keyup', function () {
 
 
 
+function finalizarPartida() {
+    var id_jogador = sessionStorage.ID_USUARIO
+
+    console.log('pontuação', pontuação)
+    console.log('id_jogador', id_jogador)
+    console.log('idMusicaBD', idMusicaBD)
+    
+
+    fetch("/jogo/jogoInserir", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.js
+            pontuacaoServer: pontuação,
+            idJogadorServer: id_jogador,
+            fkMusicaServer: idMusicaBD,
+        
+        }),
+    })
+        .then(function (resposta) {
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                console.log('Feito')
+                
+            } else {
+                console.log( "Houve um erro ao tentar realizar o cadastro!");
+            }
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            
+        });
+
+        setTimeout(function () {
+                        window.location = "./jogo.html";
+                    }, 500); // 
+    }
+    

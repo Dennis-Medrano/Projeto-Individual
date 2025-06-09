@@ -3,9 +3,10 @@ var router = express.Router();
 
 var jogoController = require("../controllers/jogoController");
 
-router.post("/jogo", function (req, res) {
+router.post("/jogoInserir", function (req, res) {
+    console.log('Cheguei no model')
     // função a ser chamada quando acessar /jogos/cadastrar
-    jogoController.jogo(req, res);
+    jogoController.jogoInserir(req, res);
 });
 
 

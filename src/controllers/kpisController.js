@@ -1,8 +1,9 @@
 var kpisModel = require("../models/kpisModel");
 
 function kpiSuperior(req, res) {
-    var id_usuario = req.query.id_usuario;
-    kpisModel.kpiSuperior(id_usuario).then(function(resultado){
+    var ID_USUARIO = req.params.id_usuario;
+    kpisModel.kpiSuperior(ID_USUARIO).then(function(resultado){
+        console.log('id_usuario: ',ID_USUARIO)
         // precisamos informar que o resultado voltará para o front-end como uma resposta em json
         res.status(200).json(resultado);
     }).catch(function(erro){
@@ -11,8 +12,8 @@ function kpiSuperior(req, res) {
 }
 
 function rank(req, res) {
-    var id_usuario = req.query.id_usuario;
-    kpisModel.rank(id_usuario).then(function(resultado){
+    var ID_USUARIO = req.params.id_usuario;
+    kpisModel.rank(ID_USUARIO).then(function(resultado){
         // precisamos informar que o resultado voltará para o front-end como uma resposta em json
         res.status(200).json(resultado);
     }).catch(function(erro){
@@ -21,8 +22,8 @@ function rank(req, res) {
 }
 
 function Graficolinha(req, res) {
-    var id_usuario = req.query.id_usuario;
-    kpisModel.Graficolinha(id_usuario).then(function(resultado){
+    var ID_USUARIO = req.params.id_usuario;
+    kpisModel.Graficolinha(ID_USUARIO).then(function(resultado){
         // precisamos informar que o resultado voltará para o front-end como uma resposta em json
         res.status(200).json(resultado);
     }).catch(function(erro){
