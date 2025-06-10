@@ -151,9 +151,14 @@ img {
 
 .swiper h3 {
     color: #fff;
+    position: relative;
+    top: -30px;
 }
-.swiper h1 {
+.swiper h1{
     color: #e61d3f;
+    position: relative;
+    top: -30px;
+    margin: 0;
 }
 
  .swiper .swiper-show1 {
@@ -172,7 +177,7 @@ img {
 }
 
  .swiper .swiper-show3 {
-    background-image: url(../pictures/30SecondsToMars.jpg);
+    background-image: url(../pictures/ladyGaga.webp);
     background-repeat: no-repeat;
     background-size: cover;
     width: 50%;
@@ -192,6 +197,8 @@ img {
     margin-right: 20px;
     border-radius: 20px;
 }
+
+
 
 /* CONTEUDO DO CARD */
 
@@ -231,7 +238,11 @@ img {
   flex-direction: column;
   background-color: #222;
   border-radius: 5%;
-  
+}
+
+.conteudo-jogo:hover{
+  transform: translateY(20px);
+  box-shadow: 3px 3px 9px #e61d3f;
 }
 
 .conteudo-index h1{
@@ -256,6 +267,17 @@ img {
   background-repeat: no-repeat;
   background-position: center;  
 }
+
+.imagem-historia{
+  background-image: url(..//pictures/fotoMusicaClassica.jpg);
+  width: 600px;
+  height: 400px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;  
+}
+
+
 
 /*conteudo-historia*/
 
