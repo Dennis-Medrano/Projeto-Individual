@@ -14,9 +14,9 @@ function kpiSuperior(ID_USUARIO) {
     return database.executar(instrucao);
 }
 
-function rank(ID_USUARIO) {
+function rank() {
     var instrucao = `
-        
+        select * from vw_ranking; 
     `;
 
     console.log("Executando a instrução SQL: \n" + instrucao);
@@ -30,7 +30,7 @@ function Graficolinha(ID_USUARIO) {
             DATE_FORMAT(dataRegistro, '%d-%m - %H:%i') AS dataRegistro
             FROM vw_Game
             WHERE id_usuario = ${ID_USUARIO}
-                ORDER BY dataRegistro DESC;
+                ORDER BY dataRegistro asc;
     `;
 
     console.log("Executando a instrução SQL: \n" + instrucao);

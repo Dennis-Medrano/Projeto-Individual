@@ -12,8 +12,8 @@ function kpiSuperior(req, res) {
 }
 
 function rank(req, res) {
-    var ID_USUARIO = req.params.id_usuario;
-    kpisModel.rank(ID_USUARIO).then(function(resultado){
+    
+    kpisModel.rank().then(function(resultado){
         // precisamos informar que o resultado voltará para o front-end como uma resposta em json
         res.status(200).json(resultado);
     }).catch(function(erro){

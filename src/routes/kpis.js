@@ -8,7 +8,7 @@ router.get("/kpiSuperior/:id_usuario", function (req, res) {
     kpisController.kpiSuperior(req, res);
 });
 
-router.get("/rank/:id_usuario", function (req, res) {
+router.get("/rank", function (req, res) {
    
     kpisController.rank(req, res);
 });

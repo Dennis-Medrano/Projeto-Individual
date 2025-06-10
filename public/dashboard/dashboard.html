@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GuitarBeat | Dashboards</title>
 
-    
+
     <link rel="stylesheet" href="./../css/dashboards.css">
     <script src="../js/sessao.js"></script>
     <script src="./../js/alerta.js"></script>
@@ -50,7 +50,7 @@
 
             </div>
 
-            
+
 
             <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
@@ -60,25 +60,43 @@
 
         <div class="container-dash">
             <div class="kpi-superior">
-                <div class="kpi">Maior Score<span id="id_score" class="valorScore">0</span></div>
-                <div class="kpi">Musica com maior Score:<span id="id_scoreMusica" class="valorScore">Toxicity</span></div>
-                <div class="kpi">Rank Atual:<span id="id_rank" class="valorScore">0</span></div>
+                <div class="kpi">
+                    <span class="tituloKPI">Maior Score</span>
+                    <span id="id_score" class="valorScore">0</span></div>
+                <div class="kpi">
+                    <span class="tituloKPI">Musica com maior Score:</span>
+                    <span id="id_scoreMusica" class="valorScore">Toxicity</span>
+                </div>
+                <div class="kpi">
+                    <span class="tituloKPI">Rank Atual:</span>
+                    <span>
+                        <span id="id_rank" class="valorScore">0</span> de
+                        <span id="id_contagemTotal">100</span>
+                    </span>
+                </div>
             </div>
 
             <div class="kpi-inferior">
                 <div class="grafico">
                     <canvas id="graficoLinha" class="graficoLinha"></canvas>
                 </div>
-                
-                <div class="rank">
 
+                <div class="rank">
+                    <span class="tituloRank">TOP 10 do Servidor</span>
+                    <div class="rank-header">
+                        <Span id="ira_rankTotal">Rank</Span>
+                        <Span id="ira_nomeTotal">Nome</Span>
+                        <Span id="ira_scoreTotal">Score</Span>
+                    </div>
+                    <div id="divRankLista">
+                    </div>
                 </div>
 
             </div>
 
         </div>
 
-        
+
     </div>
 
 
@@ -93,7 +111,7 @@
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-    
+
 
     function obterDados() {
         var id_usuario = Number(sessionStorage.ID_USUARIO)
@@ -110,42 +128,69 @@
             .then(function (dataLinha) {
                 console.log(dataLinha);
                 plotarGraficoLinha(dataLinha)
-                
+
             })
             .catch(function (err) {
                 console.log(err);
             })
 
 
-        // kppi  ------------------------------------------------------------------------------------------------------
+        // kpi  ------------------------------------------------------------------------------------------------------
         fetch(`/kpis/kpiSuperior/${id_usuario}`).then(function (response) {
-            
+
             return response.json();
         }).then(function (data) {
-            console.log('data', data)
-                document.getElementById('id_score').innerHTML = data[0].maior_score
-                document.getElementById('id_scoreMusica').innerHTML = data[0].musica_maior_score
-                
-            })
+            document.getElementById('id_score').innerHTML = data[0].maior_score
+            document.getElementById('id_scoreMusica').innerHTML = data[0].musica_maior_score
+
+        })
             .catch(function (err) {
                 console.log(err);
             })
 
 
-        // kppi  ------------------------------------------------------------------------------------------------------
-        // fetch(`/kpis/rank/${id_usuario}`).then(function (response) {
+        // kpi  ------------------------------------------------------------------------------------------------------
+        fetch(`/kpis/rank`).then(function (response) {
+            return response.json();
+        })
+            .then(function (data) {
 
-        //     return response.json();
-        // })
-        //     .then(function (data) {
-        //         console.log(data);
-        //         plotarKpiAtivos(data);
-        //     })
-        //     .catch(function (err) {
-        //         console.log(err);
-        //     })
+                const divRankList = document.getElementById('divRankLista');
+                divRankList.innerHTML = '';
+
+                for (let i = 0; i < data.length; i++) {
+                    let usuarioRank = data[i];
+                    /*Rank Pessoal*/
+                    if (usuarioRank.usuario == Number(sessionStorage.ID_USUARIO)) {
+                        document.getElementById('id_rank').innerHTML = usuarioRank.Ranking;
+                        document.getElementById('id_contagemTotal').innerHTML = usuarioRank.qtd_usuario;
+                    }
 
 
+
+                    /*Formação da lista de Rank*/
+                    let rankLista = document.createElement('div');
+                    rankLista.className = 'rankLista';
+
+                    let rankPosicao = document.createElement('span');
+                    rankPosicao.innerHTML = usuarioRank.Ranking;
+
+                    let rankNome = document.createElement('span');
+                    rankNome.innerHTML = usuarioRank.Nome;
+
+                    let rankScore = document.createElement('span');
+                    rankScore.innerHTML = usuarioRank.score;
+
+                    rankLista.appendChild(rankPosicao);
+                    rankLista.appendChild(rankNome);
+                    rankLista.appendChild(rankScore);
+
+                    divRankList.appendChild(rankLista);
+                }
+            })
+            .catch(function (err) {
+                console.log(err);
+            })
     }
 
     function plotarGraficoLinha(dataLinha) {
@@ -153,57 +198,61 @@
         var score = [];
         var Data_Registro = [];
 
-        
+
         for (let i = 0; i < dataLinha.length; i++) {
             score.push(dataLinha[i].Score)
             Data_Registro.push(dataLinha[i].dataRegistro)
         }
-       
+
         const ctx = document.getElementById('graficoLinha').getContext('2d');
 
-       
+
         const labels = Data_Registro
-        const mockData = {
+        const data = {
             labels: labels,
             datasets: [{
                 label: 'Pontuação por Partida',
-                data: score, 
+                data: score,
                 fill: true,
-                borderColor: '#e61d3f', 
-                backgroundColor: 'rgba(230, 29, 63, 0.2)', 
-                tension: 0.1, 
-                borderWidth: 3
+                borderColor: '#e61d3f',
+                backgroundColor: 'rgba(230, 29, 63, 0.2)',
+                tension: 0.1,
+                borderWidth: 3,
+                font: { size: 14 }   
             }]
         };
 
-        
+
         const config = {
             type: 'line',
-            data: mockData,
+            data: data,
             options: {
                 responsive: true,
-                maintainAspectRatio: false, 
+                maintainAspectRatio: false,
                 plugins: {
                     legend: {
                         position: 'top',
-                        labels: {color: 'white',
-                                font: {size:14}
+                        labels: {
+                            color: 'white',
+                            
                         }
 
                     },
                     title: {
                         display: true,
                         text: 'Evolução da Pontuação nas Últimas Partidas',
-                        color: 'white',
+                        color: '#e61d3f',
                         font: {
                             size: 23,
-                            
+
+
+
                         }
                     }
                 },
                 scales: {
                     y: {
-                        beginAtZero: true, 
+                        beginAtZero: true,
                         title: {
                             display: true,
                             color: 'white',
@@ -211,28 +260,31 @@
                             font: { size: 15 }
                         },
                         ticks: { // cor da escala
-                            color: 'white'
+                            color: 'white',
+                            font: {size: 14 }
+
                         }
                     },
                     x: {
-                         title: {
+                        title: {
                             display: true,
                             color: 'white',
                             text: 'Partidas',
                             font: { size: 15 }
                         },
                         ticks: { // cor da escala
-                            color: 'white'
+                            color: 'white',
+                            font: {size: 14 }
                         }
                     }
                 }
             }
         };
 
-        
+
         new Chart(ctx, config);
     }
 
 
-    
+
 </script>

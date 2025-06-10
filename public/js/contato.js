@@ -757,6 +757,6 @@ function finalizarPartida() {
 
         setTimeout(function () {
                         window.location = "./jogo.html";
-                    }, 500); // 
+                    }, 1000); // 
     }
     

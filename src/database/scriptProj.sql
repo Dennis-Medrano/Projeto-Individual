@@ -75,4 +75,26 @@ SELECT
 	WHERE id_usuario = 1 
 		ORDER BY Score DESC
 		LIMIT 1;
-		
+		insert into tentativa (fkUsuario,fkMusica,score,dataRegistro) values
+            (1,1,1000,default);
+            
+-- Traz as informações para grafico
+SELECT
+    Score,
+    DATE_FORMAT(dataRegistro, '%d-%m - %H:%i') AS data_hora_formatada
+	FROM vw_Game
+	WHERE id_usuario = 1 -- Substitua pelo ID do usuário desejado
+		ORDER BY dataRegistro asc;
+     
+-- View para ranking
+alter view vw_ranking as
+    select 
+		t.fkUsuario as usuario, 
+        u.nome as Nome,
+		dense_rank() over (order by max(t.score) desc) as Ranking,
+		(select count(distinct fkUsuario) from tentativa) as qtd_usuario,
+        t.score as score
+		from tentativa t join usuario u on fkUsuario = u.id
+		group by fkUsuario, score;
+        
+        select * from vw_ranking; 
