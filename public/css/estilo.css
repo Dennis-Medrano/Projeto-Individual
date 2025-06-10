@@ -246,7 +246,7 @@ img {
 }
 
 .conteudo-index h1{
-  color: #fff;
+  color: #e61d3f;
   margin-left: 15%;
   margin-right: 15%; 
   text-align: justify;
@@ -290,6 +290,10 @@ img {
   flex-direction: column;
   padding: 0;
   margin: 0;
+}
+
+ h1{
+  color: #e61d3f;
 }
 
 .titulo-historia{
