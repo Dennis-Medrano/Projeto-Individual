@@ -159,6 +159,28 @@ table {
     color: #e61d3f;
 }
 
+.menuDePausa{
+    position: absolute;
+    left: 82vh;
+    top: 38vh;
+    width: 35vh;
+    height: 35vh;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    border-radius: 20px;
+    font-size: 25px;
+    opacity: 0.8;
+}
+
+.menuDePausa button{
+    width: 50%;
+    height: 20%;
+    margin: 2%;
+}
 
 .escolha {
     display: flex;

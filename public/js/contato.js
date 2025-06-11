@@ -179,6 +179,10 @@ var musicaJogo = ''
 //Variavel para inicio do jogo
 var inicio = true;
 
+//Tela para o pause
+let tela = document.getElementById('telaPausa');
+tela.style.display='none'
+
 //capturando os elementos que vai ser usado
 const receptor1 = document.getElementById('bola_1');
 const receptor2 = document.getElementById('bola_2');
@@ -669,6 +673,7 @@ window.addEventListener('keydown', function () {
 
     if (tecla == ' ') {
         if (pause == false) {
+            tela.style.display='flex'
             velocidadePausa = velocidade;
             tempoAtualPausado = tempoAtual
             musicaDoJogo.pause();
@@ -676,6 +681,7 @@ window.addEventListener('keydown', function () {
             tempoAtual = 0
             pause = true;
         } else {
+            tela.style.display='none'
             velocidade = velocidadePausa;
             pause = false;
             musicaDoJogo.play();
@@ -688,6 +694,16 @@ window.addEventListener('keydown', function () {
 
 
 })
+
+function continuar() {
+    if (pause == true) {
+        tela.style.display = 'none';
+        velocidade = velocidadePausa;
+        pause = false;
+        musicaDoJogo.play();
+        tempoAtual = tempoAtualPausado; 
+    }
+}
 
 window.addEventListener('keyup', function () {
     var tecla = event.key;
@@ -715,7 +731,6 @@ window.addEventListener('keyup', function () {
         receptor5.classList.add('bolaNormal');
     }
 })
-
 
 
 function finalizarPartida() {
