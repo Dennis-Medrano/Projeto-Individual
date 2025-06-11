@@ -159,6 +159,22 @@ table {
     color: #e61d3f;
 }
 
+a {
+    font-size: 20px;
+    margin: 10px;
+    color: #e61d3f;
+    text-decoration: none;
+    font-family: "Permanent Marker", cursive;
+}
+
+a:hover {
+    font-size: 20px;
+    margin: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Permanent Marker", cursive;
+}
+
 .menuDePausa{
     position: absolute;
     left: 82vh;
